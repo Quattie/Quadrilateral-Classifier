@@ -1,10 +1,10 @@
-all: detectShape
+all: main
 
-detectShape: main.o
-	g++ main.o -o detectShape
+main: main.cpp
+    clang++ main.cpp -o main
 
-main.o: main.cpp
-    g++ -c main.cpp
+test: main
+    ./test.sh
 
-test: detectShape
-	./test.sh
+clean:
+    rm -f main
