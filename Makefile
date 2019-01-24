@@ -1,10 +1,10 @@
 all: main
 
 main: main.cpp
-    clang++ main.cpp -o main
+	clang++ main.cpp -o main
 
 test: main
-    ./test.sh
+	./test.sh
 
 clean:
-    rm -f main
+	rm -f main

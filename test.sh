@@ -1,4 +1,4 @@
-./detectShape < coordinates.txt > output.txt
+./main < coordinates.txt > output.txt
 diff output.txt expectedOutput.txt
 error-&?
 if [ &error -eq 0 ]
