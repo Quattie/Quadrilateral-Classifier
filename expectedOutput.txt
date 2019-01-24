@@ -11,4 +11,4 @@ parallelagram
 rhombus
 rhombus
 quadrilateral
-trapezoi
+trapezoid
