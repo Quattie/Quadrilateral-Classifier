@@ -1,10 +1,10 @@
 ./main < coordinates.txt > output.txt
 diff output.txt expectedOutput.txt
-error-&?
-if [ &error -eq 0 ]
+error-$?
+if [ $error -eq 0 ]
 then
 echo "test passed"
-elif [ &error -eq 1 ]
+elif [ $error -eq 1 ]
 then
 echo "test failed"
 exit 1
