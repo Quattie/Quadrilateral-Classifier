@@ -1,6 +1,6 @@
 ./main < coordinates.txt > output.txt
 diff output.txt expectedOutput.txt
-error-$?
+error=$?
 if [ $error -eq 0 ]
 then
 echo "test passed"
