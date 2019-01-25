@@ -165,7 +165,7 @@ void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
     } else if (isRectangle(allLengths, allSlopes)) {
         cout << "rectangle" << endl;
     } else if (isParrallelagram(allSlopes)) {
-        cout << "parrallelagram" << endl;
+        cout << "parallelogram" << endl;
     } else if (isTrapezoid(allSlopes)) {
         cout << "trapezoid" << endl;
     } else if (isKite(allLengths)) {

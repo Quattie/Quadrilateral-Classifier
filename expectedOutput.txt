@@ -6,8 +6,8 @@ trapezoid
 trapezoid
 kite
 kite
-parrallelagram
-parrallelagram
+parallelogram
+parallelogram
 rhombus
 rhombus
 quadrilateral
