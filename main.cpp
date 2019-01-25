@@ -155,31 +155,6 @@ vector<double> parseQuadData(const string input) {
         parsedLine.push_back(stod(results[i]));
     }
     return parsedLine;
-    
-}
-//Reads in the whole file where each line is a single string
-vector<string> readInQuads(const string input) {
-    ifstream inny(input);
-    string line;
-    vector<string> allData;
-    
-    if (inny.is_open()) {
-        while (getline(inny, line)) {
-            allData.push_back(line);
-        }
-    }
-    inny.close();
-    return allData;
-}
-
-vector<string> readConsole() {
-    string line;
-    vector<string> allData;
-    while (getline(cin, line)) {
-        allData.push_back(line);
-        
-    }
-    return allData;
 }
 
 void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
