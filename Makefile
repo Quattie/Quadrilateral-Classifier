@@ -8,25 +8,25 @@ test: main
 
 clean:
 	rm -f main
-	rm -f testFiles/squareOutput.txt
-	rm -f testFiles/rectangleOutput.txt
-	rm -f testFiles/trapezoidOutput.txt
-	rm -f testFiles/kiteOutput.txt
-	rm -f testFiles/parallelogramOutput.txt
-	rm -f testFiles/rhombusOutput.txt
-	rm -f testFiles/quadrilateralOutput.txt
-	rm -f testFiles/error1Output.txt
-	rm -f testFiles/error2Output.txt
-	rm -f testFiles/error3Output.txt
-	rm -f testFiles/error4Output.txt
-	rm -f testFiles/error5Output.txt
-	rm -f testFiles/error6Output.txt
-	rm -f testFiles/error7Output.txt
-	rm -f testFiles/error8Output.txt
-	rm -f testFiles/error9Output.txt
-	rm -f testFiles/error10Output.txt
-	rm -f testFiles/error11Output.txt
-	rm -f testFiles/error12Output.txt
+	rm -f testFiles/outputSqaure.txt
+	rm -f testFiles/outputRectangle.txt
+	rm -f testFiles/outputTrapezoid.txt
+	rm -f testFiles/outputKite.txt
+	rm -f testFiles/outputParallelogram.txt
+	rm -f testFiles/outputRhombus.txt
+	rm -f testFiles/outputQuadrilateral.txt
+	rm -f testFiles/outputError1.txt
+	rm -f testFiles/outputError2.txt
+	rm -f testFiles/outputError3.txt
+	rm -f testFiles/outputError4.txt
+	rm -f testFiles/outputError5.txt
+	rm -f testFiles/outputError6.txt
+	rm -f testFiles/outputError7.txt
+	rm -f testFiles/outputError8.txt
+	rm -f testFiles/outputError9.txt
+	rm -f testFiles/outputError10.txt
+	rm -f testFiles/outputError11.txt
+	rm -f testFiles/outputError12.txt
 
 
 cover:
