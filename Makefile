@@ -31,16 +31,16 @@ tests=(
 )
 
 #create the first .profdata
-touch ./coverage/blank.profdata
-lastTest=blank
+	touch ./coverage/blank.profdata
+	lastTest=blank
 
 #loop through tests and merge each profraw file with the last generated profdata file
-for currentTest in "${tests[@]}"
-do
-	./main < ./coverage/testFiles/${currentTest}.txt > ./coverage/testFiles/${currentTest}Output.txt
-	xcrun llvm-profdata merge -sparse ./coverage/testFiles/${lastTest}.profdata ./default.profraw -o ./coverage/testFiles/${currentTest}.profdata
-	lastTest=testFiles/${currentTest}
-done
+	for currentTest in "${tests[@]}"
+	do
+		./main < ./coverage/testFiles/${currentTest}.txt > ./coverage/testFiles/${currentTest}Output.txt
+		xcrun llvm-profdata merge -sparse ./coverage/testFiles/${lastTest}.profdata ./default.profraw -o ./coverage/testFiles/${currentTest}.profdata
+		lastTest=testFiles/${currentTest}
+	done
 
 #show code coverage
 cover:
