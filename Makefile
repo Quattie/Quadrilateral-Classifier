@@ -2,7 +2,7 @@
 clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
 
 #remove any previous profdata files
-rm -f ./testFiles/*.profdata
+rm -f ./coverage/*.profdata
 
 #declare tests
 tests=(
@@ -29,16 +29,16 @@ tests=(
 )
 
 #create the first .profdata
-touch ./testFiles/blank.profdata
+touch ./coverage/blank.profdata
 lastTest=blank
 
 #loop through tests and merge each profraw file with the last generated profdata file
 for currentTest in "${tests[@]}"
 do
-    ./main < ./testFiles/${currentTest}.txt > ./testFiles/${currentTest}Output.txt
-    xcrun llvm-profdata merge -sparse ./testFiles/${lastTest}.profdata ./default.profraw -o ./testFiles/${currentTest}.profdata
-    lastTest=${currentTest}
+    ./main < ./coverage/testFiles/${currentTest}.txt > ./coverage/testFiles/${currentTest}Output.txt
+    xcrun llvm-profdata merge -sparse ./coverage/testFiles/${lastTest}.profdata ./default.profraw -o ./coverage/testFiles/${currentTest}.profdata
+    lastTest=testFiles/${currentTest}
 done
 
 #show code coverage
-xcrun llvm-cov show ./main -instr-profile=./testFiles/${lastTest}.profdata main.cpp
+xcrun llvm-cov show ./main -instr-profile=./coverage/testFiles/${lastTest}.profdata main.cpp
