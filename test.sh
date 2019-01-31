@@ -138,20 +138,20 @@ fi
 #echo "test didn't run properly"
 #exit 1
 #fi
-./main < testFiles/error4.txt > testFiles/outputError4.txt
-diff testFiles/outputError4.txt testFiles/error4Output.txt
-error=$?
-if [ $error -eq 0 ]
-then
-echo "test passed"
-elif [ $error -eq 1 ]
-then
-echo "test failed"
-exit 1
-else
-echo "test didn't run properly"
-exit 1
-fi
+#./main < testFiles/error4.txt > testFiles/outputError4.txt
+#diff testFiles/outputError4.txt testFiles/error4Output.txt
+#error=$?
+#if [ $error -eq 0 ]
+#then
+#echo "test passed"
+#elif [ $error -eq 1 ]
+#then
+#echo "test failed"
+#exit 1
+#else
+#echo "test didn't run properly"
+#exit 1
+#fi
 ./main < testFiles/error5.txt > testFiles/outputError5.txt
 diff testFiles/outputError5.txt testFiles/error5Output.txt
 error=$?
