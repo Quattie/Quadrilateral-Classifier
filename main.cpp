@@ -293,22 +293,6 @@ bool isError3 (const vector<double> &coords){
     }
     return false;
 }
-//"error 3" -- if any two line segments representing sides cross each other
-//bool isError3(vector<double> coords) {
-//
-//    pdd A = makePair(coords[0], coords[1]);
-//    pdd B = makePair(coords[2], coords[3]);
-//    pdd C = makePair(coords[4], coords[5]);
-//    pdd D = makePair(coords[6], coords[7]);
-//
-//    pdd intersection = lineLineIntersection(A, B, C, D);
-//
-//    //If they're parallel return false
-//    if (intersection.first == __FLT_MAX__ && intersection.second == __FLT_MAX__) {
-//        return false;
-//    }
-//    return true;
-//}
 
 bool collinear(int x1, int y1, int x2, int y2, int x3, int y3) {
     int a = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
