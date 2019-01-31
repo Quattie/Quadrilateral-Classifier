@@ -201,124 +201,125 @@ bool isError2(vector<double> points) {
     return false;
 }
 
-//double orientation(double x1, double y1, double x2, double y2, double x3, double y3) {
-//    // See https://www.geeksforgeeks.org/orientation-3-ordered-points/
-//    // for details of below formula.
-//    double val = (y2 - y1) * (x3 - x2) - (x2 - x1) * (y3 - y2);
-//
-//    if (val == 0) return 0;  // colinear
-//
-//    return (val > 0)? 1: 2; // clock or counterclock wise
-//}
-//
-//bool doIntersect(double x1, double y1, double x2, double y2, double x3, double y3){
-//    // Find the four orientations needed for general and
-//    // special cases
-//    int o1 = orientation(x1, y1, x2, y2, x3, y3);
-//    int o2 = orientation(x1, y1, x2, y2, x3, y3);
-//    int o3 = orientation(x1, y1, x2, y2, x3, y3);
-//    int o4 = orientation(x1, y1, x2, y2, x3, y3);
-//
-//    // General case
-//    if (o1 != o2 && o3 != o4)
-//        return true;
-//    return false; // Doesn't fall in any of the above cases
-//}
-////"error 3" -- if any two line segments representing sides cross each other
-//bool isError3(vector<double> vect) {
-//
-//    if(doIntersect(vect[0], vect[1], vect[2], vect[3], vect[4], vect[5])) return true; //AB vs BC
-//    if(doIntersect(vect[2], vect[3], vect[4], vect[5], vect[6], vect[7])) return true; //BC vs CD
-//    if(doIntersect(vect[4], vect[5], vect[6], vect[7], vect[0], vect[1])) return true; //CD vs DA
-//    if(doIntersect(vect[6], vect[7], vect[0], vect[1], vect[2], vect[3])) return true; //DA vs AB
-//
-//    return false;
-//}
+double orientation(double x1, double y1, double x2, double y2, double x3, double y3) {
+    // See https://www.geeksforgeeks.org/orientation-3-ordered-points/
+    // for details of below formula.
+    double val = (y2 - y1) * (x3 - x2) - (x2 - x1) * (y3 - y2);
+    
+    if (val == 0) return 0;  // colinear
+    
+    return (val > 0)? 1: 2; // clock or counterclock wise
+}
+
+bool doIntersect(double x1, double y1, double x2, double y2, double x3, double y3){
+    // Find the four orientations needed for general and
+    // special cases
+    int o1 = orientation(x1, y1, x2, y2, x3, y3);
+    int o2 = orientation(x1, y1, x2, y2, x3, y3);
+    int o3 = orientation(x1, y1, x2, y2, x3, y3);
+    int o4 = orientation(x1, y1, x2, y2, x3, y3);
+    
+    // General case
+    if (o1 != o2 && o3 != o4)
+        return true;
+    return false; // Doesn't fall in any of the above cases
+}
+//"error 3" -- if any two line segments representing sides cross each other
+bool isError3(vector<double> vect) {
+    
+    if(doIntersect(vect[0], vect[1], vect[2], vect[3], vect[4], vect[5])) return true; //AB vs BC
+    if(doIntersect(vect[2], vect[3], vect[4], vect[5], vect[6], vect[7])) return true; //BC vs CD
+    if(doIntersect(vect[4], vect[5], vect[6], vect[7], vect[0], vect[1])) return true; //CD vs DA
+    if(doIntersect(vect[6], vect[7], vect[0], vect[1], vect[2], vect[3])) return true; //DA vs AB
+    
+    return false;
+}
 
 //"error 3" -- if any three points are colinear
 //A1 and A2 are 0 and 1
 //B1 and B2 are 2 and 3
 //C1 and C2 are 4 and 5
 //D1 and D2 are 6 and 7
-pdd lineLineIntersection (pdd A, pdd B, pdd C, pdd D) {
-    // Line AB represented as a1x + b1y = c1
-    double a1 = B.second - A.second;
-    double b1 = A.first - B.first;
-    double c1 = a1*(A.first) + b1*(A.second);
-    
-    // Line CD represented as a2x + b2y = c2
-    double a2 = D.second - C.second;
-    double b2 = C.first - D.first;
-    double c2 = a2*(C.first)+ b2*(C.second);
-    
-    double determinant = a1*b2 - a2*b1;
-    
-    if (determinant == 0)
-    {
-        // The lines are parallel. This is simplified
-        // by returning a pair of FLT_MAX
-        return makePair((double)__FLT_MAX__, (double)__FLT_MAX__);
-    }
-    else
-    {
-        double x = (b2*c1 - b1*c2)/determinant;
-        double y = (a1*c2 - a2*c1)/determinant;
-        return makePair(x, y);
-    }
-}
-
-bool doLinesIntersect (const vector<double> &coords){
-    pdd A = makePair(coords[0], coords[1]);
-    pdd B = makePair(coords[2], coords[3]);
-    pdd C = makePair(coords[4], coords[5]);
-    pdd D = makePair(coords[6], coords[7]);
-    
-    //line AB BC CD DA
-    pdd intersection1 = lineLineIntersection(A, B, C, D);
-    pdd intersection2 = lineLineIntersection(A, D, C, B);
-    
-    int xMax = coords[0];
-    int yMax = coords[1];
-    
-    for(int i=2; i<coords.size(); i+=2){
-        if(coords[i]>xMax){
-            xMax=coords[i];
-        }
-    }
-    
-    for(int i=3; i<coords.size(); i+=2){
-        if(coords[i]>yMax){
-            yMax=coords[i];
-        }
-    }
-    if (intersection1.first<xMax && intersection1.second<yMax && intersection1.first>0 && intersection1.second>0){
-        //if intersection y > AB max y
-        if(intersection1.second > coords[3]){
-            return false;
-        }
-        return true;
-    }
-    if(intersection2.first<xMax && intersection2.second<yMax && intersection2.second>0 && intersection2.second>0){
-        return true;
-    }
-    return false;
-}
+//pdd lineLineIntersection (pdd A, pdd B, pdd C, pdd D) {
+//    // Line AB represented as a1x + b1y = c1
+//    double a1 = B.second - A.second;
+//    double b1 = A.first - B.first;
+//    double c1 = a1*(A.first) + b1*(A.second);
+//
+//    // Line CD represented as a2x + b2y = c2
+//    double a2 = D.second - C.second;
+//    double b2 = C.first - D.first;
+//    double c2 = a2*(C.first)+ b2*(C.second);
+//
+//    double determinant = a1*b2 - a2*b1;
+//
+//    if (determinant == 0)
+//    {
+//        // The lines are parallel. This is simplified
+//        // by returning a pair of FLT_MAX
+//        return makePair((double)__FLT_MAX__, (double)__FLT_MAX__);
+//    }
+//    else
+//    {
+//        double x = (b2*c1 - b1*c2)/determinant;
+//        double y = (a1*c2 - a2*c1)/determinant;
+//        return makePair(x, y);
+//    }
+//}
+//
+//bool doLinesIntersect (const vector<double> &coords){
+//    pdd A = makePair(coords[0], coords[1]);
+//    pdd B = makePair(coords[2], coords[3]);
+//    pdd C = makePair(coords[4], coords[5]);
+//    pdd D = makePair(coords[6], coords[7]);
+//
+//    //line AB BC CD DA
+//    pdd intersection1 = lineLineIntersection(A, B, C, D);
+//    pdd intersection2 = lineLineIntersection(A, D, C, B);
+//
+//    int xMax = coords[0];
+//    int yMax = coords[1];
+//
+//    for(int i=2; i<coords.size(); i+=2){
+//        if(coords[i]>xMax){
+//            xMax=coords[i];
+//        }
+//    }
+//
+//    for(int i=3; i<coords.size(); i+=2){
+//        if(coords[i]>yMax){
+//            yMax=coords[i];
+//        }
+//    }
+//    if (intersection1.first<xMax && intersection1.second<yMax && intersection1.first>0 && intersection1.second>0){
+//        //if intersection y > AB max y
+//        if(intersection1.second > coords[3]){
+//            return false;
+//        }
+//        return true;
+//    }
+//    if(intersection2.first<xMax && intersection2.second<yMax && intersection2.second>0 && intersection2.second>0){
+//        return true;
+//    }
+//    return false;
+//}
 //"error 3" -- if any two line segments representing sides cross each other
-bool isError3(vector<double> coords) {
-    
-    pdd A = makePair(coords[0], coords[1]);
-    pdd B = makePair(coords[2], coords[3]);
-    pdd C = makePair(coords[4], coords[5]);
-    pdd D = makePair(coords[6], coords[7]);
-    
-    pdd intersection = lineLineIntersection(A, B, C, D);
-    
-    //If they're parallel return false
-    if (intersection.first == __FLT_MAX__ && intersection.second == __FLT_MAX__) {
-        return false;
-    }
-    return true;
-}
+//bool isError3(vector<double> coords) {
+//
+//    pdd A = makePair(coords[0], coords[1]);
+//    pdd B = makePair(coords[2], coords[3]);
+//    pdd C = makePair(coords[4], coords[5]);
+//    pdd D = makePair(coords[6], coords[7]);
+//
+//    pdd intersection = lineLineIntersection(A, B, C, D);
+//
+//    //If they're parallel return false
+//    if (intersection.first == __FLT_MAX__ && intersection.second == __FLT_MAX__) {
+//        return false;
+//    }
+//    return true;
+//}
+
 bool collinear(int x1, int y1, int x2, int y2, int x3, int y3) {
     int a = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
     if (a == 0) {
@@ -389,12 +390,12 @@ int main(int argc, const char * argv[]) {
             cout << "error 2" << endl;
             exit(EXIT_FAILURE);
         }
-        //        if (isError3(coordinates)) {
-        //            cout << "error 3" << endl;
-        //            exit(EXIT_FAILURE);
-        //        }
         if (isError4(coordinates)) {
             cout << "error 4" << endl;
+            exit(EXIT_FAILURE);
+        }
+        if (isError3(coordinates)) {
+            cout << "error 3" << endl;
             exit(EXIT_FAILURE);
         }
         determineShape(coorLen, allSlopes);
