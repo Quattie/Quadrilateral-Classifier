@@ -191,40 +191,6 @@ bool isError2(vector<double> points) {
     return false;
 }
 
-//double orientation(double x1, double y1, double x2, double y2, double x3, double y3) {
-//    // See https://www.geeksforgeeks.org/orientation-3-ordered-points/
-//    // for details of below formula.
-//    double val = (y2 - y1) * (x3 - x2) - (x2 - x1) * (y3 - y2);
-//
-//    if (val == 0) return 0;  // colinear
-//
-//    return (val > 0)? 1: 2; // clock or counterclock wise
-//}
-//
-//bool doIntersect(double x1, double y1, double x2, double y2, double x3, double y3){
-//    // Find the four orientations needed for general and
-//    // special cases
-//    int o1 = orientation(x1, y1, x2, y2, x3, y3);
-//    int o2 = orientation(x1, y1, x2, y2, x3, y3);
-//    int o3 = orientation(x1, y1, x2, y2, x3, y3);
-//    int o4 = orientation(x1, y1, x2, y2, x3, y3);
-//
-//    // General case
-//    if (o1 != o2 && o3 != o4)
-//        return true;
-//    return false; // Doesn't fall in any of the above cases
-//}
-////"error 3" -- if any two line segments representing sides cross each other
-//bool isError3(vector<double> vect) {
-//
-//    if(doIntersect(vect[0], vect[1], vect[2], vect[3], vect[4], vect[5])) return true; //AB vs BC
-//    if(doIntersect(vect[2], vect[3], vect[4], vect[5], vect[6], vect[7])) return true; //BC vs CD
-//    if(doIntersect(vect[4], vect[5], vect[6], vect[7], vect[0], vect[1])) return true; //CD vs DA
-//    if(doIntersect(vect[6], vect[7], vect[0], vect[1], vect[2], vect[3])) return true; //DA vs AB
-//
-//    return false;
-//}
-
 //"error 3" -- if any three points are colinear
 //A1 and A2 are 0 and 1
 //B1 and B2 are 2 and 3
