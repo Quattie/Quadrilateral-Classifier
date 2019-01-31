@@ -155,7 +155,7 @@ bool isSquare(vector<double> &allLengths, vector<double> &allSlopes) {
 vector<double> parseQuadData(const string input) {
     
     if (inputError(input)) {
-        cout << "Error 1" << endl;
+        cout << "error 1" << endl;
         exit(EXIT_FAILURE);
     }
     istringstream iss(input);
