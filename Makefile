@@ -27,7 +27,7 @@ clean:
 	rm -f testFiles/outputError10.txt
 	rm -f testFiles/outputError11.txt
 	rm -f testFiles/outputError12.txt
-
+	rm -f testFiles/outputError13.txt
 
 cover:
 	clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
@@ -50,5 +50,6 @@ cover:
 	-LLVM_PROFILE_FILE="profraw/error10.profraw" ./main < testFiles/error10.txt > testFiles/outputError10.txt
 	-LLVM_PROFILE_FILE="profraw/error11.profraw" ./main < testFiles/error11.txt > testFiles/outputError11.txt
 	-LLVM_PROFILE_FILE="profraw/error12.profraw" ./main < testFiles/error12.txt > testFiles/outputError12.txt
+	-LLVM_PROFILE_FILE="profraw/error13.profraw" ./main < testFiles/error13.txt > testFiles/outputError13.txt	-LLVM_PROFILE_FILE="profraw/error12.profraw" ./main < testFiles/error12.txt > testFiles/outputError12.txt
 	xcrun llvm-profdata merge -sparse profraw/square.profraw profraw/rectangle.profraw profraw/trapezoid.profraw profraw/kite.profraw profraw/parallelogram.profraw profraw/rhombus.profraw profraw/quadrilateral.profraw profraw/error1.profraw profraw/error2.profraw profraw/error3.profraw profraw/error4.profraw profraw/error5.profraw profraw/error6.profraw profraw/error7.profraw profraw/error8.profraw profraw/error9.profraw profraw/error10.profraw profraw/error11.profraw profraw/error12.profraw  -o main.profdata
 	xcrun llvm-cov show ./main -instr-profile=main.profdata
