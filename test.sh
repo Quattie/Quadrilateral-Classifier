@@ -68,20 +68,20 @@ else
 echo "test didn't run properly"
 exit 1
 fi
-./main < testFiles/rhombus.txt > testFiles/outputRhombus.txt
-diff testFiles/outputRhombus.txt testFiles/rhombusOutput.txt
-error=$?
-if [ $error -eq 0 ]
-then
-echo "test passed"
-elif [ $error -eq 1 ]
-then
-echo "test failed"
-exit 1
-else
-echo "test didn't run properly"
-exit 1
-fi
+#./main < testFiles/rhombus.txt > testFiles/outputRhombus.txt
+#diff testFiles/outputRhombus.txt testFiles/rhombusOutput.txt
+#error=$?
+#if [ $error -eq 0 ]
+#then
+#echo "test passed"
+#elif [ $error -eq 1 ]
+#then
+#echo "test failed"
+#exit 1
+#else
+#echo "test didn't run properly"
+#exit 1
+#fi
 ./main < testFiles/quadrilateral.txt > testFiles/outputQuadrilateral.txt
 diff testFiles/outputQuadrilateral.txt testFiles/quadrilateralOutput.txt
 error=$?
