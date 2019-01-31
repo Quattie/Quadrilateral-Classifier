@@ -312,12 +312,12 @@ int main(int argc, const char * argv[]) {
             cout << "Error 2" << endl;
             exit(EXIT_FAILURE);
         }
-        if (isError4(coordinates)) {
-            cout << "Error 4" << endl;
-            exit(EXIT_FAILURE);
-        }
         if (isError3(coordinates)) {
             cout << "Error 3" << endl;
+            exit(EXIT_FAILURE);
+        }
+        if (isError4(coordinates)) {
+            cout << "Error 4" << endl;
             exit(EXIT_FAILURE);
         }
         determineShape(coorLen, allSlopes);
