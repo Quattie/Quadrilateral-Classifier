@@ -1,4 +1,4 @@
-./main < testFiles/square.txt > outputSquare.txt
+./main < testFiles/square.txt > testFiles/outputSquare.txt
 diff testFiles/outputSquare.txt testFiles/squareOutput.txt
 error=$?
 if [ $error -eq 0 ]
