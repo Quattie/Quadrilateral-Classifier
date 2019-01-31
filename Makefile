@@ -1,8 +1,10 @@
 #compile
-clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
+main: main.cpp
+	clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
 
 #remove any previous profdata files
-rm -f ./coverage/*.profdata
+clean:
+	rm -f ./coverage/*.profdata
 
 #declare tests
 tests=(
