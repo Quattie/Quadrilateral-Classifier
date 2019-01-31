@@ -180,34 +180,34 @@ else
 echo "error6 test didn't run properly"
 exit 1
 fi
-#./main < testFiles/error7.txt > testFiles/outputError7.txt
-#diff testFiles/outputError7.txt testFiles/error7Output.txt
-#error=$?
-#if [ $error -eq 0 ]
-#then
-#echo "error7 test passed"
-#elif [ $error -eq 1 ]
-#then
-#echo "error7 test failed"
-#exit 1
-#else
-#echo "error7 test didn't run properly"
-#exit 1
-#fi
-#./main < testFiles/error8.txt > testFiles/outputError8.txt
-#diff testFiles/outputError8.txt testFiles/error8Output.txt
-#error=$?
-#if [ $error -eq 0 ]
-#then
-#echo "error8 test passed"
-#elif [ $error -eq 1 ]
-#then
-#echo "error8 test failed"
-#exit 1
-#else
-#echo "error8 test didn't run properly"
-#exit 1
-#fi
+./main < testFiles/error7.txt > testFiles/outputError7.txt
+diff testFiles/outputError7.txt testFiles/error7Output.txt
+error=$?
+if [ $error -eq 0 ]
+then
+echo "error7 test passed"
+elif [ $error -eq 1 ]
+then
+echo "error7 test failed"
+exit 1
+else
+echo "error7 test didn't run properly"
+exit 1
+fi
+./main < testFiles/error8.txt > testFiles/outputError8.txt
+diff testFiles/outputError8.txt testFiles/error8Output.txt
+error=$?
+if [ $error -eq 0 ]
+then
+echo "error8 test passed"
+elif [ $error -eq 1 ]
+then
+echo "error8 test failed"
+exit 1
+else
+echo "error8 test didn't run properly"
+exit 1
+fi
 ./main < testFiles/error9.txt > testFiles/outputError9.txt
 diff testFiles/outputError9.txt testFiles/error9Output.txt
 error=$?
