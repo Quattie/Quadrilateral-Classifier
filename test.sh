@@ -40,20 +40,20 @@ else
 echo "test didn't run properly"
 exit 1
 fi
-./main < testFiles/kite.txt > testFiles/outputKite.txt
-diff testFiles/outputKite.txt testFiles/kiteOutput.txt
-error=$?
-if [ $error -eq 0 ]
-then
-echo "test passed"
-elif [ $error -eq 1 ]
-then
-echo "test failed"
-exit 1
-else
-echo "test didn't run properly"
-exit 1
-fi
+#./main < testFiles/kite.txt > testFiles/outputKite.txt
+#diff testFiles/outputKite.txt testFiles/kiteOutput.txt
+#error=$?
+#if [ $error -eq 0 ]
+#then
+#echo "test passed"
+#elif [ $error -eq 1 ]
+#then
+#echo "test failed"
+#exit 1
+#else
+#echo "test didn't run properly"
+#exit 1
+#fi
 ./main < testFiles/parallelogram.txt > testFiles/outputParallelogram.txt
 diff testFiles/outputParallelogram.txt testFiles/ParallelogramOutput.txt
 error=$?
