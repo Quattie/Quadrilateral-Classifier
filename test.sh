@@ -48,10 +48,10 @@ then
 echo "kite test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "kite test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "kite test didn't run properly"
 exit 1
 fi
 ./main < testFiles/parallelogram.txt > testFiles/outputParallelogram.txt
