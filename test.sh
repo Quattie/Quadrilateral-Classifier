@@ -3,13 +3,13 @@ diff testFiles/outputSquare.txt testFiles/squareOutput.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "sqare test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "square test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "square test didn't run properly"
 exit 1
 fi
 ./main < testFiles/rectangle.txt > testFiles/outputRectangle.txt
@@ -17,13 +17,13 @@ diff testFiles/outputRectangle.txt testFiles/rectangleOutput.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "rectangle test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "rectangle test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "rectangle test didn't run properly"
 exit 1
 fi
 ./main < testFiles/trapezoid.txt > testFiles/outputTrapezoid.txt
@@ -31,13 +31,13 @@ diff testFiles/outputTrapezoid.txt testFiles/trapezoidOutput.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "trapezoid test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "trapezoid test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "trapezoid test didn't run properly"
 exit 1
 fi
 #./main < testFiles/kite.txt > testFiles/outputKite.txt
@@ -45,7 +45,7 @@ fi
 #error=$?
 #if [ $error -eq 0 ]
 #then
-#echo "test passed"
+#echo "kite test passed"
 #elif [ $error -eq 1 ]
 #then
 #echo "test failed"
@@ -59,13 +59,13 @@ diff testFiles/outputParallelogram.txt testFiles/ParallelogramOutput.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "parallelogram test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "parallelogram test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "parallelogram test didn't run properly"
 exit 1
 fi
 #./main < testFiles/rhombus.txt > testFiles/outputRhombus.txt
@@ -73,13 +73,13 @@ fi
 #error=$?
 #if [ $error -eq 0 ]
 #then
-#echo "test passed"
+#echo "rhombus test passed"
 #elif [ $error -eq 1 ]
 #then
-#echo "test failed"
+#echo "rhombus test failed"
 #exit 1
 #else
-#echo "test didn't run properly"
+#echo "rhombus test didn't run properly"
 #exit 1
 #fi
 #./main < testFiles/quadrilateral.txt > testFiles/outputQuadrilateral.txt
@@ -87,13 +87,13 @@ fi
 #error=$?
 #if [ $error -eq 0 ]
 #then
-#echo "test passed"
+#echo "quadrilateral test passed"
 #elif [ $error -eq 1 ]
 #then
-#echo "test failed"
+#echo "quadrilateral test failed"
 #exit 1
 #else
-#echo "test didn't run properly"
+#echo "quadrilateral test didn't run properly"
 #exit 1
 #fi
 ./main < testFiles/error1.txt > testFiles/outputError1.txt
@@ -101,13 +101,13 @@ diff testFiles/outputError1.txt testFiles/error1Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error1 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error1 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error1 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error2.txt > testFiles/outputError2.txt
@@ -115,13 +115,13 @@ diff testFiles/outputError2.txt testFiles/error2Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error2 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error2 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error2 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error3.txt > testFiles/outputError3.txt
@@ -129,13 +129,13 @@ diff testFiles/outputError3.txt testFiles/error3Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error3 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error3 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error3 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error4.txt > testFiles/outputError4.txt
@@ -143,13 +143,13 @@ diff testFiles/outputError4.txt testFiles/error4Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error4 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error4 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error4 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error5.txt > testFiles/outputError5.txt
@@ -157,13 +157,13 @@ diff testFiles/outputError5.txt testFiles/error5Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error5 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error5 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error5 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error6.txt > testFiles/outputError6.txt
@@ -171,13 +171,13 @@ diff testFiles/outputError6.txt testFiles/error6Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error6 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error6 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error6 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error7.txt > testFiles/outputError7.txt
@@ -185,13 +185,13 @@ diff testFiles/outputError7.txt testFiles/error7Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error7 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error7 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error7 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error8.txt > testFiles/outputError8.txt
@@ -199,13 +199,13 @@ diff testFiles/outputError8.txt testFiles/error8Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error8 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error8 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error8 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error9.txt > testFiles/outputError9.txt
@@ -213,13 +213,13 @@ diff testFiles/outputError9.txt testFiles/error9Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error9 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error9 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error9 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error10.txt > testFiles/outputError10.txt
@@ -227,13 +227,13 @@ diff testFiles/outputError10.txt testFiles/error10Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error10 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error10 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error10 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error11.txt > testFiles/outputError11.txt
@@ -241,13 +241,13 @@ diff testFiles/outputError11.txt testFiles/error11Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error11 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error11 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error11 test didn't run properly"
 exit 1
 fi
 ./main < testFiles/error12.txt > testFiles/outputError12.txt
@@ -255,12 +255,12 @@ diff testFiles/outputError12.txt testFiles/error12Output.txt
 error=$?
 if [ $error -eq 0 ]
 then
-echo "test passed"
+echo "error12 test passed"
 elif [ $error -eq 1 ]
 then
-echo "test failed"
+echo "error12 test failed"
 exit 1
 else
-echo "test didn't run properly"
+echo "error12 test didn't run properly"
 exit 1
 fi
