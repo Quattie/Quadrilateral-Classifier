@@ -30,7 +30,6 @@ pdd makePair(double first, double second) {
 
 bool inputError(string s) {
     size_t found = s.find_first_not_of("0123456789 ");
-    //    cout << (found == string::npos) << endl;
     return (found != string::npos);
 }
 double calculateLength (double x1, double y1, double x2, double y2){
