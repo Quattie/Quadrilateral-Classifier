@@ -16,17 +16,7 @@
 
 using namespace std;
 
-struct pdd {
-    double first;
-    double second;
-};
-
-pdd makePair(double first, double second) {
-    pdd returnPair;
-    returnPair.first = first;
-    returnPair.second = second;
-    return returnPair;
-}
+#define pdd pair<double, double>
 
 bool inputError(string s) {
     size_t found = s.find_first_not_of("0123456789 ");
@@ -246,7 +236,7 @@ pdd lineLineIntersection (pdd A, pdd B, pdd C, pdd D) {
     double b1 = A.first - B.first;
     double c1 = a1*(A.first) + b1*(A.second);
     
-    // Line CD represented as a2x + b2y = c2
+    // Line CD represented as a2x + b2y = c2d
     double a2 = D.second - C.second;
     double b2 = C.first - D.first;
     double c2 = a2*(C.first)+ b2*(C.second);
@@ -257,21 +247,21 @@ pdd lineLineIntersection (pdd A, pdd B, pdd C, pdd D) {
     {
         // The lines are parallel. This is simplified
         // by returning a pair of FLT_MAX
-        return makePair((double)__FLT_MAX__, (double)__FLT_MAX__);
+        return make_pair((double)__FLT_MAX__, (double)__FLT_MAX__);
     }
     else
     {
         double x = (b2*c1 - b1*c2)/determinant;
         double y = (a1*c2 - a2*c1)/determinant;
-        return makePair(x, y);
+        return make_pair(x, y);
     }
 }
 
 bool isError3 (const vector<double> &coords){
-    pdd A = makePair(coords[0], coords[1]);
-    pdd B = makePair(coords[2], coords[3]);
-    pdd C = makePair(coords[4], coords[5]);
-    pdd D = makePair(coords[6], coords[7]);
+    pdd A = make_pair(coords[0], coords[1]);
+    pdd B = make_pair(coords[2], coords[3]);
+    pdd C = make_pair(coords[4], coords[5]);
+    pdd D = make_pair(coords[6], coords[7]);
     
     //line AB BC CD DA
     pdd intersection1 = lineLineIntersection(A, B, C, D);
