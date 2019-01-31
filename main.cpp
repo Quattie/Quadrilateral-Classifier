@@ -191,7 +191,7 @@ bool isError2(vector<double> points) {
     return false;
 }
 
-//"error 4" -- if any three points are colinear
+//"error 3" -- if any three points are colinear
 //A1 and A2 are 0 and 1
 //B1 and B2 are 2 and 3
 //C1 and C2 are 4 and 5
@@ -251,7 +251,7 @@ bool collinear(int x1, int y1, int x2, int y2, int x3, int y3) {
 }
 
 //"error 4" -- if any three points are colinear
-//originx and originy are 0 and 1
+//x0 and y0 are 0 and 1
 //x1 and y1 are 2 and 3
 //x2 and y2 are 4 and 5
 //x3 and y3 are 6 and 7
@@ -306,19 +306,19 @@ int main(int argc, const char * argv[]) {
         vector<double> allSlopes = findAllSlopes(coordinates);
         if (isError1(line)) {
             cout << "Error 1" << endl;
-            continue;
+            exit(EXIT_FAILURE);
         }
         if (isError2(coordinates)) {
             cout << "Error 2" << endl;
-            continue;
-        }
-        if (isError3(coordinates)) {
-            cout << "Error 3" << endl;
-            continue;
+            exit(EXIT_FAILURE);
         }
         if (isError4(coordinates)) {
             cout << "Error 4" << endl;
-            continue;
+            exit(EXIT_FAILURE);
+        }
+        if (isError3(coordinates)) {
+            cout << "Error 3" << endl;
+            exit(EXIT_FAILURE);
         }
         determineShape(coorLen, allSlopes);
     }
