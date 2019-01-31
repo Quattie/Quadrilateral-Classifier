@@ -30,7 +30,7 @@ clean:
 
 
 cover:
-clang++ -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
+	clang++ -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
 
 LLVM_PROFILE_FILE=“profraw/square.profraw” ./main < testFiles/square.txt
 LLVM_PROFILE_FILE=“profraw/rectangle.profraw” ./main < testFiles/rectangle.txt
