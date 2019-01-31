@@ -40,20 +40,20 @@ else
 echo "trapezoid test didn't run properly"
 exit 1
 fi
-#./main < testFiles/kite.txt > testFiles/outputKite.txt
-#diff testFiles/outputKite.txt testFiles/kiteOutput.txt
-#error=$?
-#if [ $error -eq 0 ]
-#then
-#echo "kite test passed"
-#elif [ $error -eq 1 ]
-#then
-#echo "test failed"
-#exit 1
-#else
-#echo "test didn't run properly"
-#exit 1
-#fi
+./main < testFiles/kite.txt > testFiles/outputKite.txt
+diff testFiles/outputKite.txt testFiles/kiteOutput.txt
+error=$?
+if [ $error -eq 0 ]
+then
+echo "kite test passed"
+elif [ $error -eq 1 ]
+then
+echo "test failed"
+exit 1
+else
+echo "test didn't run properly"
+exit 1
+fi
 ./main < testFiles/parallelogram.txt > testFiles/outputParallelogram.txt
 diff testFiles/outputParallelogram.txt testFiles/ParallelogramOutput.txt
 error=$?
@@ -82,20 +82,20 @@ else
 echo "rhombus test didn't run properly"
 exit 1
 fi
-#./main < testFiles/quadrilateral.txt > testFiles/outputQuadrilateral.txt
-#diff testFiles/outputQuadrilateral.txt testFiles/quadrilateralOutput.txt
-#error=$?
-#if [ $error -eq 0 ]
-#then
-#echo "quadrilateral test passed"
-#elif [ $error -eq 1 ]
-#then
-#echo "quadrilateral test failed"
-#exit 1
-#else
-#echo "quadrilateral test didn't run properly"
-#exit 1
-#fi
+./main < testFiles/quadrilateral.txt > testFiles/outputQuadrilateral.txt
+diff testFiles/outputQuadrilateral.txt testFiles/quadrilateralOutput.txt
+error=$?
+if [ $error -eq 0 ]
+then
+echo "quadrilateral test passed"
+elif [ $error -eq 1 ]
+then
+echo "quadrilateral test failed"
+exit 1
+else
+echo "quadrilateral test didn't run properly"
+exit 1
+fi
 ./main < testFiles/error1.txt > testFiles/outputError1.txt
 diff testFiles/outputError1.txt testFiles/error1Output.txt
 error=$?
@@ -180,87 +180,87 @@ else
 echo "error6 test didn't run properly"
 exit 1
 fi
-./main < testFiles/error7.txt > testFiles/outputError7.txt
-diff testFiles/outputError7.txt testFiles/error7Output.txt
-error=$?
-if [ $error -eq 0 ]
-then
-echo "error7 test passed"
-elif [ $error -eq 1 ]
-then
-echo "error7 test failed"
-exit 1
-else
-echo "error7 test didn't run properly"
-exit 1
-fi
-./main < testFiles/error8.txt > testFiles/outputError8.txt
-diff testFiles/outputError8.txt testFiles/error8Output.txt
-error=$?
-if [ $error -eq 0 ]
-then
-echo "error8 test passed"
-elif [ $error -eq 1 ]
-then
-echo "error8 test failed"
-exit 1
-else
-echo "error8 test didn't run properly"
-exit 1
-fi
-./main < testFiles/error9.txt > testFiles/outputError9.txt
-diff testFiles/outputError9.txt testFiles/error9Output.txt
-error=$?
-if [ $error -eq 0 ]
-then
-echo "error9 test passed"
-elif [ $error -eq 1 ]
-then
-echo "error9 test failed"
-exit 1
-else
-echo "error9 test didn't run properly"
-exit 1
-fi
-#./main < testFiles/error10.txt > testFiles/outputError10.txt
-#diff testFiles/outputError10.txt testFiles/error10Output.txt
+#./main < testFiles/error7.txt > testFiles/outputError7.txt
+#diff testFiles/outputError7.txt testFiles/error7Output.txt
 #error=$?
 #if [ $error -eq 0 ]
 #then
-#echo "error10 test passed"
+#echo "error7 test passed"
 #elif [ $error -eq 1 ]
 #then
-#echo "error10 test failed"
+#echo "error7 test failed"
 #exit 1
 #else
-#echo "error10 test didn't run properly"
+#echo "error7 test didn't run properly"
 #exit 1
 #fi
-#./main < testFiles/error11.txt > testFiles/outputError11.txt
-#diff testFiles/outputError11.txt testFiles/error11Output.txt
+#./main < testFiles/error8.txt > testFiles/outputError8.txt
+#diff testFiles/outputError8.txt testFiles/error8Output.txt
 #error=$?
 #if [ $error -eq 0 ]
 #then
-#echo "error11 test passed"
+#echo "error8 test passed"
 #elif [ $error -eq 1 ]
 #then
-#echo "error11 test failed"
+#echo "error8 test failed"
 #exit 1
 #else
-#echo "error11 test didn't run properly"
+#echo "error8 test didn't run properly"
 #exit 1
 #fi
-#./main < testFiles/error12.txt > testFiles/outputError12.txt
-#diff testFiles/outputError12.txt testFiles/error12Output.txt
+#./main < testFiles/error9.txt > testFiles/outputError9.txt
+#diff testFiles/outputError9.txt testFiles/error9Output.txt
 #error=$?
 #if [ $error -eq 0 ]
 #then
-#echo "error12 test passed"
+#echo "error9 test passed"
 #elif [ $error -eq 1 ]
 #then
-#echo "error12 test failed"
+#echo "error9 test failed"
 #exit 1
 #else
-#echo "error12 test didn't run properly"
+#echo "error9 test didn't run properly"
 #exit 1
 #fi
+./main < testFiles/error10.txt > testFiles/outputError10.txt
+diff testFiles/outputError10.txt testFiles/error10Output.txt
+error=$?
+if [ $error -eq 0 ]
+then
+echo "error10 test passed"
+elif [ $error -eq 1 ]
+then
+echo "error10 test failed"
+exit 1
+else
+echo "error10 test didn't run properly"
+exit 1
+fi
+./main < testFiles/error11.txt > testFiles/outputError11.txt
+diff testFiles/outputError11.txt testFiles/error11Output.txt
+error=$?
+if [ $error -eq 0 ]
+then
+echo "error11 test passed"
+elif [ $error -eq 1 ]
+then
+echo "error11 test failed"
+exit 1
+else
+echo "error11 test didn't run properly"
+exit 1
+fi
+./main < testFiles/error12.txt > testFiles/outputError12.txt
+diff testFiles/outputError12.txt testFiles/error12Output.txt
+error=$?
+if [ $error -eq 0 ]
+then
+echo "error12 test passed"
+elif [ $error -eq 1 ]
+then
+echo "error12 test failed"
+exit 1
+else
+echo "error12 test didn't run properly"
+exit 1
+fi

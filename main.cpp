@@ -191,55 +191,38 @@ bool isError2(vector<double> points) {
     return false;
 }
 
-//"error 3" -- if any three points are colinear
-//A1 and A2 are 0 and 1
-//B1 and B2 are 2 and 3
-//C1 and C2 are 4 and 5
-//D1 and D2 are 6 and 7
-vector<double> lineLineIntersection(vector<double> points) {
-    // Line AB represented as a1x + b1y = c1
-    double a1 = points[3] - points[1];
-    double b1 = points[0] - points[2];
-    double c1 = a1*(points[0]) + b1*(points[1]);
+double orientation(double x1, double y1, double x2, double y2, double x3, double y3) {
+    // See https://www.geeksforgeeks.org/orientation-3-ordered-points/
+    // for details of below formula.
+    double val = (y2 - y1) * (x3 - x2) - (x2 - x1) * (y3 - y2);
     
-    // Line CD represented as a2x + b2y = c2
-    double a2 = points[7] - points[5];
-    double b2 = points[4] - points[6];
-    double c2 = a2*(points[4])+ b2*(points[5]);
+    if (val == 0) return 0;  // colinear
     
-    double x = a1*b2;
-    double y = a2*b1;
-    double determinant = x - y;
+    return (val > 0)? 1: 2; // clock or counterclock wise
+}
+
+bool doIntersect(double x1, double y1, double x2, double y2, double x3, double y3){
+    // Find the four orientations needed for general and
+    // special cases
+    int o1 = orientation(x1, y1, x2, y2, x3, y3);
+    int o2 = orientation(x1, y1, x2, y2, x3, y3);
+    int o3 = orientation(x1, y1, x2, y2, x3, y3);
+    int o4 = orientation(x1, y1, x2, y2, x3, y3);
     
-    //Lines are parallel
-    if (determinant == 0) {
-        vector<double> returnPair;
-        // The lines are parallel. This is simplified
-        returnPair.push_back(__FLT_MAX__);
-        returnPair.push_back(__FLT_MAX__);
-        
-        return returnPair;
-    }
-    //Lines intersect
-    else {
-        vector<double> returnPair;
-        double x = (b2*c1 - b1*c2)/determinant;
-        double y = (a1*c2 - a2*c1)/determinant;
-        returnPair.push_back(x);
-        returnPair.push_back(y);
-        return returnPair;
-    }
+    // General case
+    if (o1 != o2 && o3 != o4)
+        return true;
+    return false; // Doesn't fall in any of the above cases
 }
 //"error 3" -- if any two line segments representing sides cross each other
-bool isError3(vector<double> points) {
+bool isError3(vector<double> vect) {
     
-    vector<double> intersection = lineLineIntersection(points);
+    if(doIntersect(vect[0], vect[1], vect[2], vect[3], vect[4], vect[5])) return true; //AB vs BC
+    if(doIntersect(vect[2], vect[3], vect[4], vect[5], vect[6], vect[7])) return true; //BC vs CD
+    if(doIntersect(vect[4], vect[5], vect[6], vect[7], vect[0], vect[1])) return true; //CD vs DA
+    if(doIntersect(vect[6], vect[7], vect[0], vect[1], vect[2], vect[3])) return true; //DA vs AB
     
-    //If they're parallel return false
-    if (intersection[0] == __FLT_MAX__ && intersection[1] == __FLT_MAX__) {
-        return false;
-    }
-    return true;
+    return false;
 }
 
 bool collinear(int x1, int y1, int x2, int y2, int x3, int y3) {
