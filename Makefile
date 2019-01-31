@@ -43,4 +43,5 @@ do
 done
 
 #show code coverage
-xcrun llvm-cov show ./main -instr-profile=./coverage/testFiles/${lastTest}.profdata main.cpp
+cover:
+	xcrun llvm-cov show ./main -instr-profile=./coverage/testFiles/${lastTest}.profdata main.cpp
