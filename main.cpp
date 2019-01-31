@@ -383,19 +383,19 @@ int main(int argc, const char * argv[]) {
         vector<double> coorLen = findAllLengths(coordinates);
         vector<double> allSlopes = findAllSlopes(coordinates);
         if (isError1(line)) {
-            cout << "Error 1" << endl;
+            cout << "error 1" << endl;
             exit(EXIT_FAILURE);
         }
         if (isError2(coordinates)) {
-            cout << "Error 2" << endl;
+            cout << "error 2" << endl;
             exit(EXIT_FAILURE);
         }
         //        if (isError3(coordinates)) {
-        //            cout << "Error 3" << endl;
+        //            cout << "error 3" << endl;
         //            exit(EXIT_FAILURE);
         //        }
         if (isError4(coordinates)) {
-            cout << "Error 4" << endl;
+            cout << "error 4" << endl;
             exit(EXIT_FAILURE);
         }
         determineShape(coorLen, allSlopes);
