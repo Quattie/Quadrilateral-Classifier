@@ -1,10 +1,44 @@
-all: main
+#compile
+clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
 
-main: main.cpp
-	clang++ main.cpp -o main
+#remove any previous profdata files
+rm -f ./testFiles/*.profdata
 
-test: main
-	./test.sh
+#declare tests
+tests=(
+    square
+    rectangle
+    trapezoid
+    kite
+    parallelogram
+    rhombus
+    quadrilateral
+    error1
+    error2
+    error3
+    error4
+    error5
+    error6
+    error7
+    error8
+    error9
+    error10
+    error11
+    error12
+    blank
+)
 
-clean:
-	rm -f main
+#create the first .profdata
+touch ./testFiles/blank.profdata
+lastTest=blank
+
+#loop through tests and merge each profraw file with the last generated profdata file
+for currentTest in "${tests[@]}"
+do
+    ./main < ./testFiles/${currentTest}.txt > ./testFiles/${currentTest}Output.txt
+    xcrun llvm-profdata merge -sparse ./testFiles/${lastTest}.profdata ./default.profraw -o ./testFiles/${currentTest}.profdata
+    lastTest=${currentTest}
+done
+
+#show code coverage
+xcrun llvm-cov show ./main -instr-profile=./testFiles/${lastTest}.profdata main.cpp

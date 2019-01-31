@@ -16,6 +16,12 @@
 
 using namespace std;
 
+
+bool inputError(string s) {
+    size_t found = s.find_first_not_of("0123456789 ");
+    //    cout << (found == string::npos) << endl;
+    return (found != string::npos);
+}
 double calculateLength (double x1, double y1, double x2, double y2){
     double distance = 0;
     
@@ -74,14 +80,11 @@ vector<double> findAllSlopes(const vector<double> &al) {
     return allSlopes;
 }
 
-
-bool isParrallelagram(vector<double> &allSlopes) {
+bool isParallelogram(vector<double> &allSlopes) {
     
-//    int counter = 0;
-//    if (allLengths[0] == allLengths[2] && allLengths[1] == allLengths[3]) counter++;
-    if (allSlopes[0] == allSlopes[2] && allSlopes[1] == allSlopes[3] && allSlopes[0] != allSlopes[1])
-//    if (counter == 2)
+    if (allSlopes[0] == allSlopes[2] && allSlopes[1] == allSlopes[3] && allSlopes[0] != allSlopes[1]) {
         return true;
+    }
     return false;
 }
 
@@ -97,7 +100,7 @@ bool isRectangle(vector<double> &allLengths, vector<double> &allSlopes) {
 
 bool isRhombus(vector<double> &allLengths, vector<double> &allSlopes) {
     
-    if (!isParrallelagram(allSlopes)) {
+    if (!isParallelogram(allSlopes)) {
         return false;
     }
     for (int i = 0; i < 4; i ++) {
@@ -137,10 +140,13 @@ bool isSquare(vector<double> &allLengths, vector<double> &allSlopes) {
     return false;
 }
 
-
-
 //Only outputs one line of data at a time
 vector<double> parseQuadData(const string input) {
+    
+    if (inputError(input)) {
+        cout << "Error 1" << endl;
+        exit(EXIT_FAILURE);
+    }
     istringstream iss(input);
     //    vector<string> data(istream_iterator<string>{iss}, istream_iterator<string>());
     
@@ -157,6 +163,118 @@ vector<double> parseQuadData(const string input) {
     return parsedLine;
 }
 
+//"error 1" -- if the line contains the wrong number of points, contains invalid characters, has coordinates out of the range 0..100, or otherwise fails to describe three points (six integer values)
+bool isError1(const string numbers) {
+    
+    vector<double> input = parseQuadData(numbers);
+    for (double d : input) {
+        if (d > 100 || d < 0) {
+            return true;
+        }
+    }
+    if (input.size() != 8) {
+        return true;
+    }
+    return false;
+}
+
+//"error 2" -- if any two points coincide
+bool isError2(vector<double> points) {
+    vector<double> A = {points[0], points[1]};
+    vector<double> B = {points[2], points[3]};
+    vector<double> C = {points[4], points[5]};
+    vector<double> D = {points[6], points[7]};
+    
+    if (A == B || A == C || A == D || B == C || B == D || C == D) {
+        return true;
+    }
+    return false;
+}
+
+//"error 4" -- if any three points are colinear
+//A1 and A2 are 0 and 1
+//B1 and B2 are 2 and 3
+//C1 and C2 are 4 and 5
+//D1 and D2 are 6 and 7
+vector<double> lineLineIntersection(vector<double> points) {
+    // Line AB represented as a1x + b1y = c1
+    double a1 = points[3] - points[1];
+    double b1 = points[0] - points[2];
+    double c1 = a1*(points[0]) + b1*(points[1]);
+    
+    // Line CD represented as a2x + b2y = c2
+    double a2 = points[7] - points[5];
+    double b2 = points[4] - points[6];
+    double c2 = a2*(points[4])+ b2*(points[5]);
+    
+    double x = a1*b2;
+    double y = a2*b1;
+    double determinant = x - y;
+    
+    //Lines are parallel
+    if (determinant == 0) {
+        vector<double> returnPair;
+        // The lines are parallel. This is simplified
+        returnPair.push_back(__FLT_MAX__);
+        returnPair.push_back(__FLT_MAX__);
+        
+        return returnPair;
+    }
+    //Lines intersect
+    else {
+        vector<double> returnPair;
+        double x = (b2*c1 - b1*c2)/determinant;
+        double y = (a1*c2 - a2*c1)/determinant;
+        returnPair.push_back(x);
+        returnPair.push_back(y);
+        return returnPair;
+    }
+}
+//"error 3" -- if any two line segments representing sides cross each other
+bool isError3(vector<double> points) {
+    
+    vector<double> intersection = lineLineIntersection(points);
+    
+    //If they're parallel return false
+    if (intersection[0] == __FLT_MAX__ && intersection[1] == __FLT_MAX__) {
+        return false;
+    }
+    return true;
+}
+
+bool collinear(int x1, int y1, int x2, int y2, int x3, int y3) {
+    int a = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
+    if (a == 0) {
+        return true;
+    }
+    return false;
+}
+
+//"error 4" -- if any three points are colinear
+//originx and originy are 0 and 1
+//x1 and y1 are 2 and 3
+//x2 and y2 are 4 and 5
+//x3 and y3 are 6 and 7
+bool isError4(vector<double> d) {
+    
+    bool abc = collinear(d[0], d[1], d[2], d[3], d[4], d[5]);
+    bool bcd = collinear(d[2], d[3], d[4], d[5], d[6], d[7]);
+    bool cda = collinear(d[4], d[5], d[6], d[7], d[0], d[1]);
+    bool dab = collinear(d[6], d[7], d[0], d[1], d[2], d[3]);
+    
+    if (abc == true || bcd == true || cda == true || dab == true) {
+        return true;
+    }
+    //    if (collinear(d[0], d[1], d[2], d[3], d[4], d[5])) {return true;} //ABC
+    //    if (collinear(d[2], d[3], d[4], d[5], d[6], d[7])) {return true;} //BCD
+    //    if (collinear(d[4], d[5], d[6], d[7], d[0], d[1])) {return true;} //CDA
+    //    if (collinear(d[6], d[7], d[0], d[1], d[2], d[3])) {return true;} //DAB
+    
+    return false;
+}
+
+
+
 void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
     if (isSquare(allLengths, allSlopes)) {
         cout << "square" << endl;
@@ -164,7 +282,7 @@ void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
         cout << "rhombus" << endl;
     } else if (isRectangle(allLengths, allSlopes)) {
         cout << "rectangle" << endl;
-    } else if (isParrallelagram(allSlopes)) {
+    } else if (isParallelogram(allSlopes)) {
         cout << "parallelogram" << endl;
     } else if (isTrapezoid(allSlopes)) {
         cout << "trapezoid" << endl;
@@ -186,45 +304,23 @@ int main(int argc, const char * argv[]) {
         coordinates = parseQuadData(line);
         vector<double> coorLen = findAllLengths(coordinates);
         vector<double> allSlopes = findAllSlopes(coordinates);
+        if (isError1(line)) {
+            cout << "Error 1" << endl;
+            continue;
+        }
+        if (isError2(coordinates)) {
+            cout << "Error 2" << endl;
+            continue;
+        }
+        if (isError3(coordinates)) {
+            cout << "Error 3" << endl;
+            continue;
+        }
+        if (isError4(coordinates)) {
+            cout << "Error 4" << endl;
+            continue;
+        }
         determineShape(coorLen, allSlopes);
     }
-    //    test = readInQuads("coordinates.txt");
-    //    for (string s : test) {
-    //        testD = parseQuadData(s);
-    //        for (double d : testD) {
-    ////            cout << d << " ";
-    //            coorList.push_back(d);
-    //        }
-    //        cout << endl;
-    //    }
-    //    for (double d : coorList) {
-    //        cout << d << " ";
-    //        cout << endl;
-    //    }
-    //
-    //    double slopeTest = findSlope(4, 8, 5, 5);
-    //    cout << slopeTest << endl;
-    //
-    //    vector<double> allSlopes = findAllSlopes(4, 0, 4, 4, 0, 4);
-    //    for (double d : allSlopes) {
-    //        cout << d << endl;
-    //    }
-    //    cout << isSquare(4, 0, 4, 4, 0, 4) << endl;
-    //
-    //    cout << isRhombi(4, 0, 4, 4, 0, 4) << endl;
-    //
-    //    vector<double> angleTest = calculateAngles(4, 0, 4, 4, 0, 4);
-    //    vector<double> angleTest2 = calculateAngles(5, 5, 8, 4, 7, 1);
-    //
-    //    for (double d : angleTest2) {
-    //        cout << d << endl;
-    //    }
-    //    cout << angleTest[0];
-    //
-    //    vector<double> lengthTest;
-    //    lengthTest = allLengths(4, 0, 4, 4, 0, 4);
-    //    for (double d : lengthTest) {
-    //        cout << d;
-    //    }
     return 0;
 }
