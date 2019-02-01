@@ -28,7 +28,7 @@ def makeRectangleCoords():
     D = 3
     E = 0
     F = 3
-    for x in range(50):
+    for x in range(90):
         rectFile.write(
             str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D + x) + " " + str(E) + " " + str(F + x) + "\n")
 
@@ -78,8 +78,8 @@ def makeUniqueRectangleFiles():
                              + str(E) + " " + str(F + x) + "\n")
 
 def makeUniqueRandomFiles():
-    for x in range(100):
-        open(path + "random%03d.txt" % x, "w").write(str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " "
+    for x in range(800):
+        open(path + "random%d.txt" % x, "w").write(str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " "
             + str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + "\n")
 
 
@@ -119,16 +119,57 @@ def makeUniqueParallelogramFiles():
         open(path + "parallelogram%03d.txt" % x, "w").write(str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D + x) + " "
                              + str(E) + " " + str(F + x) + "\n")
 
+def makeOneSquareFile():
+    A = 1
+    B = 0
+    C = 1
+    D = 1
+    E = 0
+    F = 1
+    file = open(path + "squares.txt", "w")
+    for x in range(100):
+        file.write(str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D + x) + " "
+                             + str(E) + " " + str(F + x) + "\n")
 
-makeUniqueSquareFiles()
-makeUniqueRectangleFiles()
-makeUniqueRandomFiles()
+def makeOneRectangleFile():
+    A = 2
+    B = 0
+    C = 2
+    D = 3
+    E = 0
+    F = 3
+    file = open(path + "rectangle.txt", "w")
+    for x in range(90):
+        file.write(str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D + x) + " "
+                             + str(E) + " " + str(F + x) + "\n")
+
+def makeOneTrapezoidFile():
+    A = 2
+    B = 0
+    C = 3
+    D = 1
+    E = 2
+    F = 1
+    file = open(path + "trapezoid.txt", "w")
+    for x in range(90):
+        file.write(str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D + x) + " "
+                             + str(E) + " " + str(F + x) + "\n")
+makeOneSquareFile()
 makeSquareOutput()
+makeOneRectangleFile()
 makeRectangleOutput()
-makeNegativeFiles()
-makeOverflowFiles()
-makeUniqueTrapezoidFiles()
-makeUniqueParallelogramFiles()
+makeUniqueRandomFiles()
+
+
+# makeUniqueSquareFiles()
+# makeUniqueRectangleFiles()
+# makeUniqueRandomFiles()
+# makeSquareOutput()
+# makeRectangleOutput()
+# makeNegativeFiles()
+# makeOverflowFiles()
+# makeUniqueTrapezoidFiles()
+# makeUniqueParallelogramFiles()
 
 # makeSquareCoords()
 # makeRectangleCoords()

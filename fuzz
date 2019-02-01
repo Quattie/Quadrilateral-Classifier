@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./shapes.sh
-./rand.sh
+sh ./testing.sh
+sh ./coverage.sh
