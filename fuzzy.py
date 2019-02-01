@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 
 import random
-#!/usr/bin/env python3
 
 path = "pyFiles/"
 def makeSquareCoords():
