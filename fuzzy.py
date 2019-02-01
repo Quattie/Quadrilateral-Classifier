@@ -2,7 +2,7 @@
 import random
 #!/usr/bin/env python3
 
-path = "testFiles/"
+path = "pyFiles/"
 def makeSquareCoords():
     squareFile = open("squaresAuto.txt", "w")
     A = 2
