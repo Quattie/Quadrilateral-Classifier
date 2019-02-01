@@ -108,6 +108,18 @@ def makeUniqueTrapezoidFiles():
         open(path + "trapezoid%03d.txt" % x, "w").write(str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D) + " "
                              + str(E + x) + " " + str(F) + "\n")
 
+def makeUniqueParallelogramFiles():
+    A = 2
+    B = 0
+    C = 3
+    D = 1
+    E = 1
+    F = 1
+    for x in range(50):
+        open(path + "parallelogram%03d.txt" % x, "w").write(str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D + x) + " "
+                             + str(E) + " " + str(F + x) + "\n")
+
+
 makeUniqueSquareFiles()
 makeUniqueRectangleFiles()
 makeUniqueRandomFiles()
@@ -116,6 +128,7 @@ makeRectangleOutput()
 makeNegativeFiles()
 makeOverflowFiles()
 makeUniqueTrapezoidFiles()
+makeUniqueParallelogramFiles()
 
 # makeSquareCoords()
 # makeRectangleCoords()
