@@ -2,28 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d055d5a6-a7cd-45c7-814f-327a9b680191" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzer/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fuzzer/fuzzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error1.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error1.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error10.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error10.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error11.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error11.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error12.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error12.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error2.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error2.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error3.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error3.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error4.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error4.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error5.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error5.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error6.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error6.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error7.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error7.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error8.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error8.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/error9.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/error9.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/kite.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/kite.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/parallelogram.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/parallelogram.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/quadrilateral.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/quadrilateral.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/rectangle.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/rectangle.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/rhombus.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/rhombus.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/square.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/square.profraw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profraw/trapezoid.profraw" beforeDir="false" afterPath="$PROJECT_DIR$/profraw/trapezoid.profraw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Quadrilateral-Classifier.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Quadrilateral-Classifier.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/fuzzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/fuzzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random000.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random000.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random001.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random001.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random002.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random002.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random003.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random003.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random004.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random004.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random005.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random005.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random006.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random006.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random007.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random007.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random008.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random008.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random009.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random009.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random010.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random010.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random011.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random011.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random012.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random012.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random013.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random013.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random014.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random014.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random015.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random015.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random016.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random016.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random017.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random017.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random018.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random018.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random019.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random019.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random020.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random020.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random021.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random021.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random022.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random022.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random023.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random023.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random024.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random024.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random025.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random025.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random026.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random026.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random027.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random027.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random028.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random028.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random029.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random029.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random030.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random030.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random031.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random031.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random032.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random032.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random033.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random033.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random034.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random034.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random035.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random035.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random036.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random036.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random037.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random037.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random038.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random038.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random039.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random039.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random040.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random040.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random041.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random041.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random042.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random042.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random043.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random043.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random044.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random044.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random045.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random045.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random046.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random046.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random047.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random047.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random048.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random048.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random049.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random049.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random050.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random050.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random051.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random051.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random052.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random052.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random053.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random053.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random054.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random054.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random055.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random055.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random056.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random056.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random057.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random057.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random058.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random058.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random059.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random059.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random060.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random060.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random061.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random061.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random062.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random062.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random063.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random063.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random064.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random064.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random065.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random065.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random066.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random066.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random067.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random067.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random068.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random068.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random069.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random069.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random070.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random070.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random071.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random071.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random072.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random072.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random073.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random073.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random074.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random074.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random075.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random075.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random076.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random076.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random077.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random077.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random078.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random078.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random079.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random079.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random080.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random080.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random081.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random081.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random082.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random082.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random083.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random083.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random084.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random084.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random085.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random085.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random086.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random086.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random087.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random087.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random088.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random088.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random089.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random089.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random090.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random090.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random091.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random091.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random092.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random092.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random093.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random093.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random094.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random094.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random095.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random095.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random096.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random096.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random097.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random097.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random098.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random098.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuzzer/random099.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzer/random099.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +115,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Quadrilateral_Classifier$Quadrilateral_Classifier.coverage" NAME="Quadrilateral-Classifier Coverage Results" MODIFIED="1548995818338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/Quadrilateral_Classifier$Quadrilateral_Classifier.coverage" NAME="Quadrilateral-Classifier Coverage Results" MODIFIED="1549037279843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
   </component>
   <component name="FileEditorManager">
     <leaf />
@@ -51,6 +134,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/fileGeneration.py" />
+        <option value="$PROJECT_DIR$/fuzzy.py" />
       </list>
     </option>
   </component>
@@ -130,24 +214,19 @@
       <option name="presentableId" value="Default" />
       <updated>1548994837570</updated>
       <workItem from="1548994838777" duration="1292000" />
+      <workItem from="1549037174381" duration="133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1292000" />
+    <option name="totallyTimeSpent" value="1425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
@@ -155,28 +234,29 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fileGeneration.py">
+    <entry file="file://$PROJECT_DIR$/fileGeneration.py" />
+    <entry file="file://$PROJECT_DIR$/1000Files.py" />
+    <entry file="file://$PROJECT_DIR$/fuzzy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1000Files.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="9" lean-forward="true" selection-end-line="52" />
+        <state relative-caret-position="195">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
         </state>
       </provider>
     </entry>

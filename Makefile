@@ -8,26 +8,12 @@ test: main
 
 clean:
 	rm -f main
-	rm -f testFiles/outputSqaure.txt
-	rm -f testFiles/outputRectangle.txt
-	rm -f testFiles/outputTrapezoid.txt
-	rm -f testFiles/outputKite.txt
-	rm -f testFiles/outputParallelogram.txt
-	rm -f testFiles/outputRhombus.txt
-	rm -f testFiles/outputQuadrilateral.txt
-	rm -f testFiles/outputError1.txt
-	rm -f testFiles/outputError2.txt
-	rm -f testFiles/outputError3.txt
-	rm -f testFiles/outputError4.txt
-	rm -f testFiles/outputError5.txt
-	rm -f testFiles/outputError6.txt
-	rm -f testFiles/outputError7.txt
-	rm -f testFiles/outputError8.txt
-	rm -f testFiles/outputError9.txt
-	rm -f testFiles/outputError10.txt
-	rm -f testFiles/outputError11.txt
-	rm -f testFiles/outputError12.txt
-	rm -f testFiles/outputError13.txt
+	rm -rf testFiles/*
+
+fuzzer:
+	clang++ -std=c++11 main.cpp -o main
+	./fuzzer.py
+
 
 cover:
 	clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
