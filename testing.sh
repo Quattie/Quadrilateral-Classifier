@@ -18,6 +18,14 @@ then
 errorCount+=1
 fi
 
+./main < pyFiles/trapezoid.txt > pyFiles/outputTrapezoid.txt
+diff pyFiles/trapezoidOutput.txt pyFiles/outputtrapezoid.txt
+error=$?
+if [ $error -eq 1 ]
+then
+errorCount+=1
+fi
+
 for i in `seq 0 799`;
 do
     random="random"

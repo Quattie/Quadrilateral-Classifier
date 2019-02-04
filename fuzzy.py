@@ -154,11 +154,20 @@ def makeOneTrapezoidFile():
     for x in range(90):
         file.write(str(A + x) + " " + str(B) + " " + str(C + x) + " " + str(D + x) + " "
                              + str(E) + " " + str(F + x) + "\n")
+
+def makeTrapezoidOutput():
+    rectOutputFile = open(path + "trapezoidOutput.txt", "w")
+    for x in range(90):
+        rectOutputFile.write("trapezoid" + "\n")
+
+
 makeOneSquareFile()
 makeSquareOutput()
 makeOneRectangleFile()
+makeOneTrapezoidFile()
 makeRectangleOutput()
 makeUniqueRandomFiles()
+makeTrapezoidOutput()
 
 
 # makeUniqueSquareFiles()
