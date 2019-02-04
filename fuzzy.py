@@ -34,7 +34,7 @@ def makeRectangleCoords():
 
 def makeRectangleOutput():
     rectOutputFile = open(path + "rectangleOutput.txt", "w")
-    for x in range(100):
+    for x in range(90):
         rectOutputFile.write("rectangle" + "\n")
 
 def makeRandomCoords():
