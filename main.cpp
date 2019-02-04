@@ -80,6 +80,28 @@ vector<double> findAllSlopes(const vector<double> &al) {
     return allSlopes;
 }
 
+bool areLengthsEqual(vector<double> &allLengths) {
+    double len1 = allLengths[0];
+    double len2 = allLengths[1];
+    double len3 = allLengths[2];
+    double len4 = allLengths[0];
+    if (len1 == len2 && len1 == len3 && len1 == len4) {
+        return true;
+    }
+    return false;
+}
+
+bool areSlopesEqual(vector<double> &allSlopes) {
+    double s1 = allSlopes[0];
+    double s2 = allSlopes[1];
+    double s3 = allSlopes[2];
+    double s4 = allSlopes[3];
+    if (s1 == s2 && s1 == s3 && s1 == s4) {
+        return true;
+    }
+    return false;
+}
+
 bool isParallelogram(vector<double> &allSlopes) {
     
     if (allSlopes[0] == allSlopes[2] && allSlopes[1] == allSlopes[3] && allSlopes[0] != allSlopes[1]) {
@@ -90,10 +112,8 @@ bool isParallelogram(vector<double> &allSlopes) {
 
 bool isRectangle(vector<double> &allLengths, vector<double> &allSlopes) {
     
-    for (int i = 0; i < 4; i ++) {
-        if (allLengths[0] == allLengths[2] && allLengths[1] == allLengths[3] && allSlopes[i] == allSlopes[i + 1]) {
-            return true;
-        }
+    if (allLengths[0] == allLengths[2] && allLengths[1] == allLengths[3] && areSlopesEqual(allSlopes)) {
+        return true;
     }
     return false;
 }
@@ -103,10 +123,8 @@ bool isRhombus(vector<double> &allLengths, vector<double> &allSlopes) {
     if (!isParallelogram(allSlopes)) {
         return false;
     }
-    for (int i = 0; i < 4; i ++) {
-        if ((allSlopes[0] != allSlopes[1]) && (allLengths[i] == allLengths[i + 1])) {
-            return true;
-        }
+    if ((allSlopes[0] != allSlopes[1]) && areLengthsEqual(allLengths)) {
+        return true;
     }
     return false;
 }
@@ -132,10 +150,11 @@ bool isTrapezoid(vector<double> &allSlopes) {
 
 bool isSquare(vector<double> &allLengths, vector<double> &allSlopes) {
     
-    for (int i = 0; i < 4; i ++) {
-        if (allLengths[i] == allLengths[i + 1] && allSlopes[i] == allSlopes[i + 1]) {
-            return true;
-        }
+    int counter = 0;
+    if (areLengthsEqual(allLengths)) counter++;
+    if (areSlopesEqual(allSlopes)) counter++;
+    if (counter == 2) {
+        return true;
     }
     return false;
 }

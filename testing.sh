@@ -1,5 +1,8 @@
 #!/bin/bash
 
+clang++ -std=c++11 -fsanitize=address main.cpp -o main
+#the line above will run the code with the address sanitizer on, but it takes a long time to run
+
 errorCount=0
 
 ./main < pyFiles/squares.txt > pyFiles/outputSquare.txt
@@ -26,7 +29,7 @@ then
 errorCount+=1
 fi
 
-for i in `seq 0 799`;
+for i in `seq 0 999`;
 do
     random="random"
     output="output"
@@ -34,13 +37,14 @@ do
     ./main < "pyFiles/$random$i.txt" > "pyFiles/$output$random$i.txt"
 done
 
-for i in `seq 0 799`;
+for i in `seq 0 999`;
 do
     rm -f "pyFiles/$output$i$random.txt"
 done
 
 rm -f pyFiles/outputSquare.txt
 rm -f pyFiles/outputRectangle.txt
+rm -f pyFiles/outputTrapezoid.txt
 
 if [[ $erroCount -gt 0 ]]
     then
