@@ -22,7 +22,15 @@ errorCount+=1
 fi
 
 ./main < pyFiles/trapezoid.txt > pyFiles/outputTrapezoid.txt
-diff pyFiles/trapezoidOutput.txt pyFiles/outputtrapezoid.txt
+diff pyFiles/trapezoidOutput.txt pyFiles/outputTrapezoid.txt
+error=$?
+if [ $error -eq 1 ]
+then
+errorCount+=1
+fi
+
+./main < pyFiles/parallelogram.txt > pyFiles/outputParallelogram.txt
+diff pyFiles/parallelogramOutput.txt pyFiles/outputParallelogram.txt
 error=$?
 if [ $error -eq 1 ]
 then
