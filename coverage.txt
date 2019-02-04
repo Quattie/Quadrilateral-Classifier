@@ -54,11 +54,11 @@
    54|  3.96k|    double vy = y2 - y1;
    55|  3.96k|    double vx = x2 - x1;
    56|  3.96k|    if (vy == 0 || vx == 0) {
-   57|    829|        return 0;
-   58|    829|    }
-   59|  3.13k|    double slope = vy / vx;
-   60|  3.13k|    return slope;
-   61|  3.13k|}
+   57|    812|        return 0;
+   58|    812|    }
+   59|  3.14k|    double slope = vy / vx;
+   60|  3.14k|    return slope;
+   61|  3.14k|}
    62|       |
    63|    990|vector<double> findAllSlopes(const vector<double> &al) {
    64|    990|    
@@ -80,84 +80,84 @@
    80|    990|    return allSlopes;
    81|    990|}
    82|       |
-   83|    452|bool areLengthsEqual(vector<double> &allLengths) {
-   84|    452|    double len1 = allLengths[0];
-   85|    452|    double len2 = allLengths[1];
-   86|    452|    double len3 = allLengths[2];
-   87|    452|    double len4 = allLengths[0];
-   88|    452|    if (len1 == len2 && len1 == len3 && len1 == len4) {
+   83|    444|bool areLengthsEqual(vector<double> &allLengths) {
+   84|    444|    double len1 = allLengths[0];
+   85|    444|    double len2 = allLengths[1];
+   86|    444|    double len3 = allLengths[2];
+   87|    444|    double len4 = allLengths[0];
+   88|    444|    if (len1 == len2 && len1 == len3 && len1 == len4) {
    89|    100|        return true;
    90|    100|    }
-   91|    352|    return false;
-   92|    352|}
+   91|    344|    return false;
+   92|    344|}
    93|       |
-   94|    542|bool areSlopesEqual(vector<double> &allSlopes) {
-   95|    542|    double s1 = allSlopes[0];
-   96|    542|    double s2 = allSlopes[1];
-   97|    542|    double s3 = allSlopes[2];
-   98|    542|    double s4 = allSlopes[3];
-   99|    542|    if (s1 == s2 && s1 == s3 && s1 == s4) {
+   94|    534|bool areSlopesEqual(vector<double> &allSlopes) {
+   95|    534|    double s1 = allSlopes[0];
+   96|    534|    double s2 = allSlopes[1];
+   97|    534|    double s3 = allSlopes[2];
+   98|    534|    double s4 = allSlopes[3];
+   99|    534|    if (s1 == s2 && s1 == s3 && s1 == s4) {
   100|    280|        return true;
   101|    280|    }
-  102|    262|    return false;
-  103|    262|}
+  102|    254|    return false;
+  103|    254|}
   104|       |
-  105|    614|bool isParallelogram(vector<double> &allSlopes) {
-  106|    614|    
-  107|    614|    if (allSlopes[0] == allSlopes[2] && allSlopes[1] == allSlopes[3] && allSlopes[0] != allSlopes[1]) {
+  105|    598|bool isParallelogram(vector<double> &allSlopes) {
+  106|    598|    
+  107|    598|    if (allSlopes[0] == allSlopes[2] && allSlopes[1] == allSlopes[3] && allSlopes[0] != allSlopes[1]) {
   108|      0|        return true;
   109|      0|    }
-  110|    614|    return false;
-  111|    614|}
+  110|    598|    return false;
+  111|    598|}
   112|       |
-  113|    352|bool isRectangle(vector<double> &allLengths, vector<double> &allSlopes) {
-  114|    352|    
-  115|    352|    if (allLengths[0] == allLengths[2] && allLengths[1] == allLengths[3] && areSlopesEqual(allSlopes)) {
+  113|    344|bool isRectangle(vector<double> &allLengths, vector<double> &allSlopes) {
+  114|    344|    
+  115|    344|    if (allLengths[0] == allLengths[2] && allLengths[1] == allLengths[3] && areSlopesEqual(allSlopes)) {
   116|     90|        return true;
   117|     90|    }
-  118|    262|    return false;
-  119|    262|}
+  118|    254|    return false;
+  119|    254|}
   120|       |
-  121|    352|bool isRhombus(vector<double> &allLengths, vector<double> &allSlopes) {
-  122|    352|    
-  123|    352|    if (!isParallelogram(allSlopes)) {
-  124|    352|        return false;
-  125|    352|    }
+  121|    344|bool isRhombus(vector<double> &allLengths, vector<double> &allSlopes) {
+  122|    344|    
+  123|    344|    if (!isParallelogram(allSlopes)) {
+  124|    344|        return false;
+  125|    344|    }
   126|      0|    if ((allSlopes[0] != allSlopes[1]) && areLengthsEqual(allLengths)) {
   127|      0|        return true;
   128|      0|    }
   129|      0|    return false;
   130|      0|}
   131|       |
-  132|    257|bool isKite(vector<double> &allLengths) {
-  133|    257|    
-  134|    257|    int counter = 0;
-  135|    257|    if (allLengths[0] == allLengths[1] || allLengths[0] == allLengths[3]) counter++;
-  136|    257|    if (allLengths[1] == allLengths[2] || allLengths[2] == allLengths[3]) counter++;
-  137|    257|    if (counter == 2) {
+  132|    253|bool isKite(vector<double> &allLengths) {
+  133|    253|    
+  134|    253|    int counter = 0;
+  135|    253|    if (allLengths[0] == allLengths[1] || allLengths[0] == allLengths[3]) counter++;
+  136|    253|    if (allLengths[1] == allLengths[2] || allLengths[2] == allLengths[3]) counter++;
+  137|    253|    if (counter == 2) {
   138|      0|        return true;
   139|      0|    }
-  140|    257|    return false;
-  141|    257|}
+  140|    253|    return false;
+  141|    253|}
   142|       |
-  143|    262|bool isTrapezoid(vector<double> &allSlopes) {
-  144|    262|    
-  145|    262|    if ((allSlopes[0] == allSlopes[2]) || (allSlopes[1] == allSlopes[3])) {
-  146|      5|        return true;
-  147|      5|    }
-  148|    257|    return false;
-  149|    257|}
+  143|    254|bool isTrapezoid(vector<double> &allSlopes) {
+  144|    254|    
+  145|    254|    if ((allSlopes[0] == allSlopes[2]) || (allSlopes[1] == allSlopes[3])) {
+  146|      1|        return true;
+  147|      1|    }
+  148|    253|    return false;
+  149|    253|}
   150|       |
-  151|    452|bool isSquare(vector<double> &allLengths, vector<double> &allSlopes) {
-  152|    452|    
-  153|    452|    int counter = 0;
-  154|    452|    if (areLengthsEqual(allLengths)) counter++;
-  155|    452|    if (areSlopesEqual(allSlopes)) counter++;
-  156|    452|    if (counter == 2) {
+  151|    444|bool isSquare(vector<double> &allLengths, vector<double> &allSlopes) {
+  152|    444|    
+  153|    444|    int counter = 0;
+  154|    444|    if (areLengthsEqual(allLengths)) counter++;
+  155|    444|    if (areSlopesEqual(allSlopes)) counter++;
+  156|    444|    if (counter == 2) {
   157|    100|        return true;
   158|    100|    }
-  159|    352|    return false;
-  160|    352|}
+  159|    344|    return false;
+  160|    344|}
   161|       |
   162|       |//Only outputs one line of data at a time
   163|  1.98k|vector<double> parseQuadData(const string input) {
@@ -205,10 +205,10 @@
   205|    990|    vector<double> D = {points[6], points[7]};
   206|    990|    
   207|    990|    if (A == B || A == C || A == D || B == C || B == D || C == D) {
-  208|      0|        return true;
-  209|      0|    }
-  210|    990|    return false;
-  211|    990|}
+  208|      1|        return true;
+  209|      1|    }
+  210|    989|    return false;
+  211|    989|}
   212|       |
   213|       |//"error 3" -- if any three points are colinear
   214|       |//A1 and A2 are 0 and 1
@@ -229,11 +229,11 @@
   229|  1.97k|    double determinant = a1*b2 - a2*b1;
   230|  1.97k|    
   231|  1.97k|    if (determinant == 0)
-  232|    383|    {
-  233|    383|        // The lines are parallel. This is simplified
-  234|    383|        // by returning a pair of FLT_MAX
-  235|    383|        return make_pair((double)__FLT_MAX__, (double)__FLT_MAX__);
-  236|    383|    }
+  232|    381|    {
+  233|    381|        // The lines are parallel. This is simplified
+  234|    381|        // by returning a pair of FLT_MAX
+  235|    381|        return make_pair((double)__FLT_MAX__, (double)__FLT_MAX__);
+  236|    381|    }
   237|  1.59k|    else
   238|  1.59k|    {
   239|  1.59k|        double x = (b2*c1 - b1*c2)/determinant;
@@ -257,8 +257,8 @@
   257|    988|    
   258|  3.95k|    for(int i=2; i<coords.size(); i+=2){
   259|  2.96k|        if(coords[i]>xMax){
-  260|  1.63k|            xMax=coords[i];
-  261|  1.63k|        }
+  260|  1.64k|            xMax=coords[i];
+  261|  1.64k|        }
   262|  2.96k|    }
   263|    988|    
   264|  3.95k|    for(int i=3; i<coords.size(); i+=2){
@@ -267,23 +267,23 @@
   267|  1.65k|        }
   268|  2.96k|    }
   269|    988|    if (intersection1.first<xMax && intersection1.second<yMax && intersection1.first>0 && intersection1.second>0){
-  270|    458|        //if intersection y > AB max y
-  271|    458|        if(intersection1.second > coords[3]){
-  272|    122|            return false;
-  273|    122|        }
-  274|    336|        return true;
-  275|    336|    }
-  276|    530|    if(intersection2.first<xMax && intersection2.second<yMax && intersection2.second>0 && intersection2.second>0){
-  277|    200|        return true;
-  278|    200|    }
-  279|    330|    return false;
-  280|    330|}
+  270|    449|        //if intersection y > AB max y
+  271|    449|        if(intersection1.second > coords[3]){
+  272|     92|            return false;
+  273|     92|        }
+  274|    357|        return true;
+  275|    357|    }
+  276|    539|    if(intersection2.first<xMax && intersection2.second<yMax && intersection2.second>0 && intersection2.second>0){
+  277|    187|        return true;
+  278|    187|    }
+  279|    352|    return false;
+  280|    352|}
   281|       |
-  282|  3.96k|bool collinear(int x1, int y1, int x2, int y2, int x3, int y3) {
-  283|  3.96k|    int a = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
-  284|  3.96k|    if (a == 0) {
-  285|      2|        return true;
-  286|      2|    }
+  282|  3.95k|bool collinear(int x1, int y1, int x2, int y2, int x3, int y3) {
+  283|  3.95k|    int a = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);
+  284|  3.95k|    if (a == 0) {
+  285|      1|        return true;
+  286|      1|    }
   287|  3.95k|    return false;
   288|  3.95k|}
   289|       |
@@ -292,16 +292,16 @@
   292|       |//x1 and y1 are 2 and 3
   293|       |//x2 and y2 are 4 and 5
   294|       |//x3 and y3 are 6 and 7
-  295|    990|bool isError4(vector<double> d) {
-  296|    990|    
-  297|    990|    bool abc = collinear(d[0], d[1], d[2], d[3], d[4], d[5]);
-  298|    990|    bool bcd = collinear(d[2], d[3], d[4], d[5], d[6], d[7]);
-  299|    990|    bool cda = collinear(d[4], d[5], d[6], d[7], d[0], d[1]);
-  300|    990|    bool dab = collinear(d[6], d[7], d[0], d[1], d[2], d[3]);
-  301|    990|    
-  302|    990|    if (abc == true || bcd == true || cda == true || dab == true) {
-  303|      2|        return true;
-  304|      2|    }
+  295|    989|bool isError4(vector<double> d) {
+  296|    989|    
+  297|    989|    bool abc = collinear(d[0], d[1], d[2], d[3], d[4], d[5]);
+  298|    989|    bool bcd = collinear(d[2], d[3], d[4], d[5], d[6], d[7]);
+  299|    989|    bool cda = collinear(d[4], d[5], d[6], d[7], d[0], d[1]);
+  300|    989|    bool dab = collinear(d[6], d[7], d[0], d[1], d[2], d[3]);
+  301|    989|    
+  302|    989|    if (abc == true || bcd == true || cda == true || dab == true) {
+  303|      1|        return true;
+  304|      1|    }
   305|    988|    //    if (collinear(d[0], d[1], d[2], d[3], d[4], d[5])) {return true;} //ABC
   306|    988|    //    if (collinear(d[2], d[3], d[4], d[5], d[6], d[7])) {return true;} //BCD
   307|    988|    //    if (collinear(d[4], d[5], d[6], d[7], d[0], d[1])) {return true;} //CDA
@@ -312,23 +312,23 @@
   312|       |
   313|       |
   314|       |
-  315|    452|void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
-  316|    452|    if (isSquare(allLengths, allSlopes)) {
+  315|    444|void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
+  316|    444|    if (isSquare(allLengths, allSlopes)) {
   317|    100|        cout << "square" << endl;
-  318|    352|    } else if (isRhombus(allLengths, allSlopes)) {
+  318|    344|    } else if (isRhombus(allLengths, allSlopes)) {
   319|      0|        cout << "rhombus" << endl;
-  320|    352|    } else if (isRectangle(allLengths, allSlopes)) {
+  320|    344|    } else if (isRectangle(allLengths, allSlopes)) {
   321|     90|        cout << "rectangle" << endl;
-  322|    262|    } else if (isParallelogram(allSlopes)) {
+  322|    254|    } else if (isParallelogram(allSlopes)) {
   323|      0|        cout << "parallelogram" << endl;
-  324|    262|    } else if (isTrapezoid(allSlopes)) {
-  325|      5|        cout << "trapezoid" << endl;
-  326|    257|    } else if (isKite(allLengths)) {
+  324|    254|    } else if (isTrapezoid(allSlopes)) {
+  325|      1|        cout << "trapezoid" << endl;
+  326|    253|    } else if (isKite(allLengths)) {
   327|      0|        cout << "kite" << endl;
-  328|    257|    } else {
-  329|    257|        cout << "quadrilateral" << endl;
-  330|    257|    }
-  331|    452|}
+  328|    253|    } else {
+  329|    253|        cout << "quadrilateral" << endl;
+  330|    253|    }
+  331|    444|}
   332|       |
   333|    802|int main(int argc, const char * argv[]) {
   334|    802|    vector<string> test;
@@ -337,7 +337,7 @@
   337|    802|    
   338|    802|    string line;
   339|    802|    vector<double> coordinates;
-  340|  1.25k|    while (getline(cin, line)) {
+  340|  1.24k|    while (getline(cin, line)) {
   341|    990|        coordinates = parseQuadData(line);
   342|    990|        vector<double> coorLen = findAllLengths(coordinates);
   343|    990|        vector<double> allSlopes = findAllSlopes(coordinates);
@@ -346,19 +346,19 @@
   346|      0|            exit(EXIT_FAILURE);
   347|      0|        }
   348|    990|        if (isError2(coordinates)) {
-  349|      0|            cout << "error 2" << endl;
-  350|      0|            exit(EXIT_FAILURE);
-  351|      0|        }
-  352|    990|        if (isError4(coordinates)) {
-  353|      2|            cout << "error 4" << endl;
-  354|      2|            exit(EXIT_FAILURE);
-  355|      2|        }
+  349|      1|            cout << "error 2" << endl;
+  350|      1|            exit(EXIT_FAILURE);
+  351|      1|        }
+  352|    989|        if (isError4(coordinates)) {
+  353|      1|            cout << "error 4" << endl;
+  354|      1|            exit(EXIT_FAILURE);
+  355|      1|        }
   356|    988|        if (isError3(coordinates)) {
-  357|    536|            cout << "error 3" << endl;
-  358|    536|            exit(EXIT_FAILURE);
-  359|    536|        }
-  360|    452|        determineShape(coorLen, allSlopes);
-  361|    452|    }
+  357|    544|            cout << "error 3" << endl;
+  358|    544|            exit(EXIT_FAILURE);
+  359|    544|        }
+  360|    444|        determineShape(coorLen, allSlopes);
+  361|    444|    }
   362|    802|    return 0;
   363|    802|}
 

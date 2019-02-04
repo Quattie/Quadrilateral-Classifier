@@ -155,6 +155,19 @@ def makeParallelogramOutput():
     for x in range(90):
         rectOutputFile.write("parallelogram" + "\n")
 
+def makeOneNegativeFile():
+    file = open(path + "negative.txt", "w")
+    for x in range(90):
+        file.write(str(random.randint(-100, -1)) + " " + str(random.randint(-100, -1))
+            + " " + str(random.randint(-100, -1)) + " " + str(random.randint(-100, -1)) + " "
+                + str(random.randint(-100, -1)) + " " + str(random.randint(-100, -1)) + "\n")
+
+
+def makeNegativeOutput():
+    rectOutputFile = open(path + "negativeOutput.txt", "w")
+    for x in range(90):
+        rectOutputFile.write("error 1" + "\n")
+
 
 makeOneSquareFile()
 makeSquareOutput()
@@ -165,3 +178,5 @@ makeUniqueRandomFiles()
 makeTrapezoidOutput()
 makeOneParallelogramFile()
 makeParallelogramOutput()
+# makeOneNegativeFile()
+# makeNegativeOutput()
