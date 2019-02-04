@@ -78,7 +78,7 @@ def makeUniqueRectangleFiles():
                              + str(E) + " " + str(F + x) + "\n")
 
 def makeUniqueRandomFiles():
-    for x in range(800):
+    for x in range(1000):
         open(path + "random%d.txt" % x, "w").write(str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " "
             + str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + " " + str(random.randint(0, 100)) + "\n")
 
