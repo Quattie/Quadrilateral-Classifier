@@ -328,35 +328,35 @@ void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
 
 int main(int argc, const char * argv[]) {
     
-    vector<double> coorList;
-    
-    string line;
-    vector<double> coordinates;
-    while (getline(cin, line)) {
-        coordinates = parseQuadData(line);
-        if (line == "") {
-            cout << "error 1" << endl;
-            exit(EXIT_FAILURE);
+    while (!cin.eof()) {
+        string line;
+        vector<double> coordinates;
+        while (getline(cin, line)) {
+            coordinates = parseQuadData(line);
+            if (line == "") {
+                cout << "error 1" << endl;
+                exit(EXIT_FAILURE);
+            }
+            vector<double> coorLen = findAllLengths(coordinates);
+            vector<double> allSlopes = findAllSlopes(coordinates);
+            if (isError1(line)) {
+                cout << "error 1" << endl;
+                exit(EXIT_FAILURE);
+            }
+            if (isError2(coordinates)) {
+                cout << "error 2" << endl;
+                exit(EXIT_FAILURE);
+            }
+            if (isError4(coordinates)) {
+                cout << "error 4" << endl;
+                exit(EXIT_FAILURE);
+            }
+            if (isError3(coordinates)) {
+                cout << "error 3" << endl;
+                exit(EXIT_FAILURE);
+            }
+            determineShape(coorLen, allSlopes);
         }
-        vector<double> coorLen = findAllLengths(coordinates);
-        vector<double> allSlopes = findAllSlopes(coordinates);
-        if (isError1(line)) {
-            cout << "error 1" << endl;
-            exit(EXIT_FAILURE);
-        }
-        if (isError2(coordinates)) {
-            cout << "error 2" << endl;
-            exit(EXIT_FAILURE);
-        }
-        if (isError4(coordinates)) {
-            cout << "error 4" << endl;
-            exit(EXIT_FAILURE);
-        }
-        if (isError3(coordinates)) {
-            cout << "error 3" << endl;
-            exit(EXIT_FAILURE);
-        }
-        determineShape(coorLen, allSlopes);
     }
     return 0;
 }
