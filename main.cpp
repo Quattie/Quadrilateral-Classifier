@@ -25,11 +25,11 @@ bool inputError(string s) {
 double calculateLength (double x1, double y1, double x2, double y2){
     double distance = 0;
     
-    distance = sqrt(pow((x2-x1),2) + pow((y2-y1),2));
+    distance = sqrt(pow((x2 - x1) , 2) + pow((y2 - y1) , 2));
     return distance;
 }
 
-//Returns a vector of doubles with side1 in the [0] all the way up to 4
+//Returns a vector of doubles with side 1 in the [0] all the way up to 4
 vector<double> findAllLengths(const vector<double> &al) {
     
     //originx and originy are 0 and 1
@@ -167,7 +167,6 @@ vector<double> parseQuadData(const string input) {
         exit(EXIT_FAILURE);
     }
     istringstream iss(input);
-    //    vector<string> data(istream_iterator<string>{iss}, istream_iterator<string>());
     
     vector<string> results;
     vector<double> parsedLine;
@@ -220,14 +219,14 @@ pdd lineLineIntersection (pdd A, pdd B, pdd C, pdd D) {
     // Line AB represented as a1x + b1y = c1
     double a1 = B.second - A.second;
     double b1 = A.first - B.first;
-    double c1 = a1*(A.first) + b1*(A.second);
+    double c1 = a1 * (A.first) + b1 * (A.second);
     
     // Line CD represented as a2x + b2y = c2d
     double a2 = D.second - C.second;
     double b2 = C.first - D.first;
-    double c2 = a2*(C.first)+ b2*(C.second);
+    double c2 = a2 * (C.first) + b2 * (C.second);
     
-    double determinant = a1*b2 - a2*b1;
+    double determinant = a1 * b2 - a2 * b1;
     
     if (determinant == 0)
     {
@@ -237,8 +236,8 @@ pdd lineLineIntersection (pdd A, pdd B, pdd C, pdd D) {
     }
     else
     {
-        double x = (b2*c1 - b1*c2)/determinant;
-        double y = (a1*c2 - a2*c1)/determinant;
+        double x = (b2 * c1 - b1 * c2)/determinant;
+        double y = (a1 * c2 - a2 * c1)/determinant;
         return make_pair(x, y);
     }
 }
@@ -256,25 +255,25 @@ bool isError3 (const vector<double> &coords){
     int xMax = coords[0];
     int yMax = coords[1];
     
-    for(int i=2; i<coords.size(); i+=2){
-        if(coords[i]>xMax){
-            xMax=coords[i];
+    for (int i = 2; i < coords.size(); i += 2){
+        if (coords[i] > xMax){
+            xMax = coords[i];
         }
     }
     
-    for(int i=3; i<coords.size(); i+=2){
-        if(coords[i]>yMax){
+    for (int i = 3; i < coords.size(); i += 2){
+        if (coords[i] > yMax){
             yMax=coords[i];
         }
     }
-    if (intersection1.first<xMax && intersection1.second<yMax && intersection1.first>0 && intersection1.second>0){
+    if (intersection1.first < xMax && intersection1.second < yMax && intersection1.first > 0 && intersection1.second > 0){
         //if intersection y > AB max y
-        if(intersection1.second > coords[3]){
+        if (intersection1.second > coords[3]){
             return false;
         }
         return true;
     }
-    if(intersection2.first<xMax && intersection2.second<yMax && intersection2.second>0 && intersection2.second>0){
+    if (intersection2.first < xMax && intersection2.second < yMax && intersection2.second > 0 && intersection2.second > 0){
         return true;
     }
     return false;
@@ -305,8 +304,6 @@ bool isError4(vector<double> d) {
     }
     return false;
 }
-
-
 
 void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
     if (isSquare(allLengths, allSlopes)) {
