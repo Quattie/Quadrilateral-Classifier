@@ -182,7 +182,8 @@ vector<double> parseQuadData(const string input) {
     return parsedLine;
 }
 
-//"error 1" -- if the line contains the wrong number of points, contains invalid characters, has coordinates out of the range 0..100, or otherwise fails to describe three points (six integer values)
+//"error 1" -- if the line contains the wrong number of points, contains invalid characters, has coordinates out of the
+//range 0..100, or otherwise fails to describe three points (six integer values)
 bool isError1(const string numbers) {
     
     vector<double> input = parseQuadData(numbers);
@@ -302,11 +303,6 @@ bool isError4(vector<double> d) {
     if (abc == true || bcd == true || cda == true || dab == true) {
         return true;
     }
-    //    if (collinear(d[0], d[1], d[2], d[3], d[4], d[5])) {return true;} //ABC
-    //    if (collinear(d[2], d[3], d[4], d[5], d[6], d[7])) {return true;} //BCD
-    //    if (collinear(d[4], d[5], d[6], d[7], d[0], d[1])) {return true;} //CDA
-    //    if (collinear(d[6], d[7], d[0], d[1], d[2], d[3])) {return true;} //DAB
-    
     return false;
 }
 
@@ -331,14 +327,17 @@ void determineShape(vector<double> &allLengths, vector<double> &allSlopes) {
 }
 
 int main(int argc, const char * argv[]) {
-    vector<string> test;
-    vector<double> testD;
+    
     vector<double> coorList;
     
     string line;
     vector<double> coordinates;
     while (getline(cin, line)) {
         coordinates = parseQuadData(line);
+        if (line == "") {
+            cout << "error 1" << endl;
+            exit(EXIT_FAILURE);
+        }
         vector<double> coorLen = findAllLengths(coordinates);
         vector<double> allSlopes = findAllSlopes(coordinates);
         if (isError1(line)) {
