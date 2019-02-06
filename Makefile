@@ -36,6 +36,13 @@ fuzzer:
 	./fuzzy.py
 	chmod +x fuzz
 
+compare:
+	clang++ -std=c++11 jordanMain.cpp -o jordan
+	clang++ -std=c++11 main.cpp -o main
+	chmod +x rongmin.py
+	./rongmin.py
+	chmod +x rongminBash.sh
+
 cover:
 	clang++ -std=c++11 -fprofile-instr-generate -fcoverage-mapping main.cpp -o main
 	LLVM_PROFILE_FILE="profraw/square.profraw" ./main < testFiles/square.txt > testFiles/outputSqaure.txt
