@@ -37,6 +37,7 @@ double calculateLength (double x1, double y1, double x2, double y2){
 }
 
 void exitError(string error) {
+    cout << "error 1" << endl;
     exit (EXIT_FAILURE);
 }
 //Returns a vector of doubles with side 1 in the [0] all the way up to 4
@@ -68,9 +69,9 @@ vector<double> findAllLengths(const vector<double> &al) {
 double findSlope(double x1, double y1, double x2, double y2) {
     double vy = y2 - y1;
     double vx = x2 - x1;
-    if (vy == 0 || vx == 0) {
-        return 0;
-    }
+        if (vy == 0 || vx == 0) {
+            return 0;
+        }
     double slope = vy / vx;
     return slope;
 }
